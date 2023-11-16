@@ -22,4 +22,41 @@ function connect_db() {
 
 }
 
+function get_documents_list($db_conn){
+  // Câu truy vấn SQL
+  $sql = "SELECT * FROM document";
+  
+  // Thực thi câu truy vấn
+  $documents_list = $db_conn->query($sql);
+
+  // Trả về kết quả
+  return $documents_list;
+}
+
+function get_document_steps($document_id, $db_conn){
+
+  // Câu truy vấn SQL 
+  $sql = "SELECT stepid, stepname FROM steps WHERE documentid = $document_id";
+
+  // Thực thi truy vấn
+  $steps_list = $db_conn->query($sql);
+
+  // Trả về kết quả
+  return $steps_list;
+
+}
+
+function get_step_posts($step_id, $db_conn){
+
+  // Câu truy vấn SQL 
+  $sql = "SELECT postid, postname FROM post WHERE stepid = $step_id";
+
+  // Thực thi truy vấn
+  $steps_list = $db_conn->query($sql);
+
+  // Trả về kết quả
+  return $post_list;
+
+}
+
 ?>
