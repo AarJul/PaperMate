@@ -2,8 +2,7 @@
     include 'db_connect.php';
     $db = connect_db();
 
-    // $post_id = $_GET['id'];
-    $post_id = "1";
+    $post_id = $_GET['id'];
     $detail = get_post_detail($post_id, $db);
     
 ?> 
@@ -17,15 +16,21 @@
 <body>
     <?php 
     // In nội dung bài viết 
-    echo $detail['content'];
+    $content = $detail['postcontent']->fetch_assoc(); 
+
+    echo "<h1>" . $content['postcontent'] . "</h1>";
 
     // In danh sách bình luận
     $comments = $detail['comments'];
+    echo "<br>";
 
     foreach ($comments as $comment) {
-
+        
         echo "Ngày: " . $comment['date'];
-        echo "Nội dung: " . $comment['commentcontent'];
+        echo "<br>";
+        echo "Nội dung: " . $comment['comment'];
+        echo "<br>";
+        echo "<br>";
 
     }
     ?>

@@ -61,20 +61,20 @@ function get_step_posts($step_id, $db_conn){
 function get_post_detail($post_id, $db_conn){
 
   // Câu truy vấn lấy nội dung bài viết 
-  $sql = "SELECT postcontent FROM post WHERE postid = $post_id";
+  $get_postcontent = "SELECT postcontent FROM post WHERE postid = $post_id";
   
   // Câu truy vấn lấy các bình luận
-  $sql2 = "SELECT commentid, userid, date, commentcontent 
-           FROM comment 
+  $get_comment = "SELECT commentid, userid, date, comment
+           FROM comments 
            WHERE postid = $post_id
            ORDER BY date ASC";
 
-  $post_content = $db_conn->query($sql);
-  $post_comments = $db_conn->query($sql2);
+  $post_content = $db_conn->query($get_postcontent);
+  $post_comments = $db_conn->query($get_comment);
 
   // Cho kết quả vào mảng
   $post_detail = array();
-  $post_detail['content'] = $post_content; 
+  $post_detail['postcontent'] = $post_content; 
   $post_detail['comments'] = $post_comments;
 
   // Trả về mảng kết quả
