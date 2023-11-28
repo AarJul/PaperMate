@@ -34,5 +34,10 @@
 
     }
     ?>
+
+    <form method="POST" action="comment.php">
+        <textarea name="comment_content" rows="5"></textarea><br>
+        <button type="submit">Gửi comment</button>
+    </form>
 </body>
 </html>
