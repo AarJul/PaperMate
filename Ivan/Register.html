@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>新規登録画面</title>
+    <link rel="stylesheet" href="css/register.css" />
+    <link rel="stylesheet" href="css/color.css" />
+    <link rel="stylesheet" href="css/login.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <form id="registration-form" method="post" action="Register.php">
+        <div class="form-group form-group-lg">
+          <label for="user_id">名前</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            name="name"
+            placeholder="名前を入力"
+            required
+          />
+        </div>
+        <div class="form-group form-group-lg">
+          <label for="email-input">メール</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email-input"
+            name="email"
+            placeholder="メールアドレスを入力"
+            required
+          />
+        </div>
+        <div class="form-group form-group-lg">
+          <label for="password-input">パスワード</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password-input"
+            name="password"
+            placeholder="パスワードを入力"
+            required
+          />
+        </div>
+
+        
+          
+        </div>
+
+        <!-- Hidden input field to store the selected option -->
+        <input type="hidden" id="selectedOption" />
+
+        <div id="response"></div>
+        
+
+        <!-- fixing -->
+        <input type="submit" class="btn btn-success btn-lg" value="登録" />
+        <a href="../Login/login.html" class="btn btn-info btn-lg" role="button"
+          >戻る</a
+        >
+      </form>
+    </div>
+
+    <script>
+      function selectOption(option, selectedText) {
+        document.getElementById("selectedOption").value = option;
+        document.getElementById("ddown").innerHTML =
+          selectedText + '<span class="caret"></span>';
+        let storeCodeInput = document.getElementById("store-code");
+        if (option === "store") {
+          storeCodeInput.style.display = "block"; // Show the input field
+        } else {
+          storeCodeInput.style.display = "none"; // Hide the input field
+        }
+      }
+      window.onload = function () {
+        var storeCodeInput = document.getElementById("store-code");
+        storeCodeInput.style.display = "none";
+      };
+
+    </script>
+  </body>
+</html>
