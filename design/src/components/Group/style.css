@@ -1,0 +1,23 @@
+.group {
+  background-color: #f2d377;
+  border: 1px solid;
+  border-color: #d1af49;
+  border-radius: 10px;
+  height: 39px;
+  position: relative;
+  width: 141px;
+}
+
+.group .div {
+  color: #ffffff;
+  font-family: "Inter", Helvetica;
+  font-size: 24px;
+  font-weight: 400;
+  left: -1px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: -2px;
+  width: 141px;
+}
