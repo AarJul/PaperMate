@@ -1,1 +1,0 @@
-export { RectangleWrapper } from "./RectangleWrapper";

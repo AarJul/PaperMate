@@ -1,1 +1,0 @@
-export { NewAccount } from "./NewAccount";
