@@ -82,4 +82,8 @@ function get_post_detail($post_id, $db_conn){
 
 }
 
+function insert_comment($postid, $userid, $comment, $date, $db_conn){
+  $sql = "INSERT INTO comment(postid, userid, comment, date) VALUE($postid, $commentid, $userid, $comment, $date, $db_conn)";
+}
+
 ?>
