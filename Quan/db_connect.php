@@ -36,7 +36,7 @@ function get_documents_list($db_conn){
 function get_document_steps($document_id, $db_conn){
 
   // Câu truy vấn SQL 
-  $sql = "SELECT stepid, stepname FROM steps WHERE documentid = $document_id";
+  $sql = "SELECT stepsid, stepsname FROM steps WHERE documentid = $document_id";
 
   // Thực thi truy vấn
   $steps_list = $db_conn->query($sql);
@@ -49,13 +49,36 @@ function get_document_steps($document_id, $db_conn){
 function get_step_posts($step_id, $db_conn){
 
   // Câu truy vấn SQL 
-  $sql = "SELECT postid, postname FROM post WHERE stepid = $step_id";
+  $sql = "SELECT postid, postname FROM post WHERE stepsid = $step_id";
 
   // Thực thi truy vấn
-  $steps_list = $db_conn->query($sql);
-
+  $post_list = $db_conn->query($sql);
+  
   // Trả về kết quả
   return $post_list;
+
+}
+function get_post_detail($post_id, $db_conn){
+
+  // Câu truy vấn lấy nội dung bài viết 
+  $sql = "SELECT postcontent FROM post WHERE postid = $post_id";
+  
+  // Câu truy vấn lấy các bình luận
+  $sql2 = "SELECT commentid, userid, date, commentcontent 
+           FROM comment 
+           WHERE postid = $post_id
+           ORDER BY date ASC";
+
+  $post_content = $db_conn->query($sql);
+  $post_comments = $db_conn->query($sql2);
+
+  // Cho kết quả vào mảng
+  $post_detail = array();
+  $post_detail['content'] = $post_content; 
+  $post_detail['comments'] = $post_comments;
+
+  // Trả về mảng kết quả
+  return $post_detail; 
 
 }
 

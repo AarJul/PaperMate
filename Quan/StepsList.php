@@ -16,8 +16,8 @@
 <body>
     <?php while($row = $steps->fetch_assoc()): ?>
         <div>
-            <a href="step_detail.php?id=<?php echo $row['stepid']; ?>"> 
-                <?php echo $row['stepname']; ?>
+            <a href="PostList.php?id=<?php echo $row['stepsid']; ?>"> 
+                <?php echo $row['stepsname']; ?>
             </a>
         </div>
     <?php endwhile; ?>
