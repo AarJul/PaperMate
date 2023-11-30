@@ -19,17 +19,13 @@ $telephone = $_POST['telephone'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-$selectedOption = $_POST['selectedOption'];
+$language = $_POST['language'];
 
-if ($selectedOption == 'store') {
-    $stmt = $conn->prepare("INSERT INTO Store (STORE_NAME, STORE_TEL, STORE_EMAIL, STORE_PASSWORD, STORE_ADDRESS) 
+
+    $stmt = $conn->prepare("INSERT INTO user (username,telephone,email,password,language) 
                             VALUES (?, ?, ?, ?, ?)");
-    $stmt->bind_param("sssss", $name, $telephone, $email, $hashedPassword, $address);
-}else{
-    $stmt = $conn->prepare("INSERT INTO User (USER_NAME, USER_TEL, USER_EMAIL, USER_PASSWORD, USER_ADDRESS) 
-                            VALUES (?, ?, ?, ?, ?)");
-    $stmt->bind_param("sssss", $name, $telephone, $email, $hashedPassword, $address);
-}
+    $stmt->bind_param($name, $telephone, $email, $hashedPassword, $address);
+
 
 if ($stmt->execute()) {
     echo "登録できた！";
