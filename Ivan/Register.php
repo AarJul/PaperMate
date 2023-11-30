@@ -1,9 +1,9 @@
  <?php
 // データベースの情報　
 $servername = "localhost";
-$username = "dbuser";
-$password = "ecc";
-$dbname = "food";
+$username = "root";
+$password = "root";
+$dbname = "papermate";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -19,7 +19,6 @@ $telephone = $_POST['telephone'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-$address = $_POST['address'];
 $selectedOption = $_POST['selectedOption'];
 
 if ($selectedOption == 'store') {
