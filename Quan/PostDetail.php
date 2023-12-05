@@ -13,13 +13,16 @@
 
     // Kiểm tra xem có dữ liệu comment được gửi từ form không
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["comment_content"])) {
-    // Gọi hàm xử lý comment với nội dung comment được gửi từ form
-    insert_comment($post_id,$userid,$_POST["comment_content"],....,$db);
+        // Lấy ngày và giờ hiện tại
+        $currentDateTime = date("Y-m-d H:i:s");
 
-    // Redirect lại trang để refresh
-    header('Location: page.php');
-    exit(); // Đảm bảo không có mã HTML hoặc mã PHP khác được thực hiện sau khi chuyển hướng
-}
+        // Gọi hàm xử lý comment với nội dung comment được gửi từ form
+        insert_comment($post_id,$userid,$_POST["comment_content"],$currentDateTime,$db);
+
+        // Redirect lại trang để refresh
+        header('Location: PostDetail.php');
+        exit(); // Đảm bảo không có mã HTML hoặc mã PHP khác được thực hiện sau khi chuyển hướng
+    }
 ?> 
 <!DOCTYPE html>
 <html lang="en">
