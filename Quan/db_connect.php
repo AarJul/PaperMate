@@ -22,6 +22,25 @@ function connect_db() {
 
 }
 
+function get_user_name($db_conn, $userid) {
+  // Câu truy vấn SQL
+  $sql = "SELECT username FROM user WHERE userid = $userid";
+
+  // Thực thi câu truy vấn
+  $result = $db_conn->query($sql);
+
+  // Kiểm tra xem có dữ liệu trả về không
+  if ($result && $result->num_rows > 0) {
+      // Lấy giá trị username từ dòng kết quả
+      $row = $result->fetch_assoc();
+      return $row['username'];
+  } else {
+      // Trả về một giá trị mặc định hoặc null nếu không tìm thấy
+      return null;
+  }
+}
+
+
 function get_documents_list($db_conn){
   // Câu truy vấn SQL
   $sql = "SELECT * FROM document";
@@ -83,7 +102,13 @@ function get_post_detail($post_id, $db_conn){
 }
 
 function insert_comment($postid, $userid, $comment, $date, $db_conn){
-  $sql = "INSERT INTO comment(postid, userid, comment, date) VALUE($postid, $commentid, $userid, $comment, $date, $db_conn)";
+  $sql = "INSERT INTO comments (postid, userid, comment, date) VALUES ('$postid', '$userid', '$comment', '$date')";
+  $result = $db_conn->query($sql);
+  
+  if (!$result) {
+    // Xử lý lỗi
+    die("Lỗi truy vấn: " . $db_conn->error);
+  }
 }
 
 ?>
