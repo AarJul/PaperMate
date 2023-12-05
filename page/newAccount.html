@@ -17,8 +17,10 @@
     <div id="app">
         <!-- header navigation bar -->
         <div class="header">
-            <ul class="navbar navbar-expand bg-dark navbar-dark">
-                <a class="navbar-brand" href="#">PaperMate</a>
+            <ul class="navbar navbar-expand-sm bg-dark navbar-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">PaperMate</a>
+                </div>
             </ul>
         </div>
         <div class="container-fluid">
@@ -28,32 +30,48 @@
                     <div class="row justify-content-center align-items-center">
                         <div class="col-1"></div>
                         <div class="col-6">
-                            <button type="button" class="btn btn-warning btn-lg">language</button>
+                            <div class="dropdown text-end">
+                                <button type="button" class="btn btn-primary btn-lg btn-danger dropdown-toggle"
+                                    data-bs-toggle="dropdown">
+                                    Dropdown button
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">English</a></li>
+                                    <li><a class="dropdown-item" href="#">Vietnam</a></li>
+                                    <li><a class="dropdown-item" href="#">Chinese</a></li>
+                                </ul>
+                            </div>
                             <h2>Register New Account</h2>
                             <br>
                             <div class="mb-3 mt-3">
                                 <label for="email" class="form-label">Email:</label>
-                                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                                <input type="email" class="form-control" id="email" placeholder="Enter email"
+                                    name="email">
                             </div>
                             <div class="mb-3">
                                 <label for="pwd" class="form-label">Password:</label>
-                                <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+                                <input type="password" class="form-control" id="pwd" placeholder="Enter password"
+                                    name="pswd">
                             </div>
                             <div class="mb-3">
                                 <label for="pwd" class="form-label">Password:</label>
-                                <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+                                <input type="password" class="form-control" id="pwd" placeholder="Enter password"
+                                    name="pswd">
                             </div>
                             <div class="mb-3">
                                 <label for="pwd" class="form-label">Password:</label>
-                                <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+                                <input type="password" class="form-control" id="pwd" placeholder="Enter password"
+                                    name="pswd">
                             </div>
                             <div class="mb-3">
                                 <label for="pwd" class="form-label">Password:</label>
-                                <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+                                <input type="password" class="form-control" id="pwd" placeholder="Enter password"
+                                    name="pswd">
                             </div>
                             <div class="mb-3">
                                 <label for="pwd" class="form-label">Password:</label>
-                                <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+                                <input type="password" class="form-control" id="pwd" placeholder="Enter password"
+                                    name="pswd">
                             </div>
                             <div class="row justify-content-center align-items-center g-2">
                                 <div class="col">
@@ -65,18 +83,18 @@
                                     </select>
                                 </div>
                                 <div class="col">
-                                    <button type="submit" class="btn btn-primary btn-lg btn-danger">Submit</button>
+                                    <button type="submit" class="btn btn-primary btn-lg btn-danger">REGISTER</button>
                                 </div>
+                            </div>
+                            <div class="col"></div>
                         </div>
-                        <div class="col"></div>
-                    </div>
                     </div>
                     <br>
                 </form>
                 <!-- footer -->
                 <div class="mt-4 p-5 bg-secondary p-3 text-white rounded">
                     <h1>広告</h1>
-                  </div>
+                </div>
             </div>
         </div>
     </div>
