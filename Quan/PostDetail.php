@@ -46,16 +46,39 @@
     echo "<br>";
 
     foreach ($comments as $comment) {
-        $username = get_user_name($db, $comment['userid']);
-        echo "User: " . $username;
-        echo "<br>";
-        echo "Ngày: " . $comment['date'];
-        echo "<br>";
-        echo "Nội dung: " . $comment['comment'];
-        echo "<br>";
-        echo "<br>";
 
-    }
+        $username = get_user_name($db, $comment['userid']);
+      
+        // Tính số ngày đã trôi qua
+        $now = strtotime("now"); 
+        $comment_date = strtotime($comment['date']);
+        
+        echo $username . " \t(" ;  
+         // Hiển thị số ngày thay vì ngày cụ thể 
+         $num_days = round(abs($now - $comment_date) / 86400);
+
+         if($num_days < 1) {
+             $num_minutes = round(abs($now - $comment_date) / 60); 
+             if($num_minutes < 60){
+                 echo $num_minutes . " minutes ago";
+             }else{
+                 echo (int)($num_minutes/60) . " hours ago";
+             }
+         } else if($num_days >= 365) {
+             $num_years = round($num_days/365);
+             echo $num_years . " years ago";
+         } else if ($num_days >= 30) {
+             $num_months = round($num_days/30);
+             echo $num_months . " month ago";
+         } else {
+         echo $num_days . " days ago"; 
+         }
+        echo ")<br>";
+        echo $comment['comment'];
+        echo "<br>";
+        echo "<br>";
+        
+      }
     ?>
 
     <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
