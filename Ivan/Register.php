@@ -28,6 +28,7 @@ $stmt->bind_param("sssss", $name, $telephone, $email, $hashedPassword, $language
 
 if ($stmt->execute()) {
     echo "Registration successful!";
+    header("Location: ../Min/login.html");
 } else {
     echo "Error: " . $stmt->error;
 }
