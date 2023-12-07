@@ -1,5 +1,4 @@
- <?php
-// データベースの情報　
+<?php
 $servername = "localhost";
 $username = "root";
 $password = "root";
@@ -7,36 +6,32 @@ $dbname = "papermate";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-//接続のチェック
 if ($conn->connect_error) {
-    die("アクセス失敗: " . $conn->connect_error);
+    die("Connection failed: " . $conn->connect_error);
 }
 
-$sql;
-//フォームから送信されたデータを取得
 $name = $_POST['name'];
-$telephone = $_POST['telephone'];
+$telephone = $_POST['tel'];
 $email = $_POST['email'];
-$password = $_POST['password'];
+$password = $_POST['pwd'];
 $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 $language = $_POST['language'];
 
+$stmt = $conn->prepare("INSERT INTO user (username, telephone, email, password, language) 
+                        VALUES (?, ?, ?, ?, ?)");
 
-    $stmt = $conn->prepare("INSERT INTO user (username,telephone,email,password,language) 
-                            VALUES (?, ?, ?, ?, ?)");
-    $stmt->bind_param($name, $telephone, $email, $hashedPassword, $address);
+if (!$stmt) {
+    die('Error in statement preparation: ' . $conn->error);
+}
 
+$stmt->bind_param("sssss", $name, $telephone, $email, $hashedPassword, $language);
 
 if ($stmt->execute()) {
-    echo "登録できた！";
+    echo "Registration successful!";
 } else {
-    echo "エラー: " . $stmt->error;
+    echo "Error: " . $stmt->error;
 }
 
 $stmt->close();
-
 $conn->close();
 ?>
-
-
-
