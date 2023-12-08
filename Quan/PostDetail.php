@@ -14,14 +14,11 @@
 
     // Kiểm tra xem có dữ liệu comment được gửi từ form không
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["comment_content"])) {
-
         $post_id = $_POST["postid"];
         // Lấy ngày và giờ hiện tại
         $currentDateTime = date("Y-m-d H:i:s");
-        
         // Gọi hàm xử lý comment với nội dung comment được gửi từ form
         insert_comment($post_id,$userid,$_POST["comment_content"],$currentDateTime,$db);
-
         // Redirect lại trang để refresh
         header("Location: PostDetail.php?id=$post_id");
         exit(); // Đảm bảo không có mã HTML hoặc mã PHP khác được thực hiện sau khi chuyển hướng
