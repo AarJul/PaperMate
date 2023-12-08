@@ -26,7 +26,7 @@
         <div class="container-fluid">
             <!-- main -->
             <div class="main">
-                <form action="" method="post">
+                <form action="../Ivan/Register.php" method="post">
                     <div class="row justify-content-center align-items-center">
                         <div class="col-1"></div>
                         <div class="col-6">
@@ -44,6 +44,11 @@
                             <h2>Register New Account</h2>
                             <br>
                             <div class="mb-3 mt-3">
+                                <label for="Username" class="form-label">Username:</label>
+                                <input type="text" class="form-control" id="name" placeholder="Enter Username"
+                                    name="name">
+                            </div>
+                            <div class="mb-3 mt-3">
                                 <label for="email" class="form-label">Email:</label>
                                 <input type="email" class="form-control" id="email" placeholder="Enter email"
                                     name="email">
@@ -51,35 +56,25 @@
                             <div class="mb-3">
                                 <label for="pwd" class="form-label">Password:</label>
                                 <input type="password" class="form-control" id="pwd" placeholder="Enter password"
-                                    name="pswd">
+                                    name="pwd">
                             </div>
                             <div class="mb-3">
-                                <label for="pwd" class="form-label">Password:</label>
-                                <input type="password" class="form-control" id="pwd" placeholder="Enter password"
-                                    name="pswd">
+                                <label for="pwd" class="form-label">Re-enter Password:</label>
+                                <input type="password" class="form-control" id="pwd2" placeholder="Enter password"
+                                    name="pwd">
                             </div>
                             <div class="mb-3">
-                                <label for="pwd" class="form-label">Password:</label>
-                                <input type="password" class="form-control" id="pwd" placeholder="Enter password"
-                                    name="pswd">
-                            </div>
-                            <div class="mb-3">
-                                <label for="pwd" class="form-label">Password:</label>
-                                <input type="password" class="form-control" id="pwd" placeholder="Enter password"
-                                    name="pswd">
-                            </div>
-                            <div class="mb-3">
-                                <label for="pwd" class="form-label">Password:</label>
-                                <input type="password" class="form-control" id="pwd" placeholder="Enter password"
-                                    name="pswd">
+                                <label for="pwd" class="form-label">Telephone:</label>
+                                <input type="tel" class="form-control" id="tel" placeholder="Enter Telephone"
+                                    name="tel">
                             </div>
                             <div class="row justify-content-center align-items-center g-2">
                                 <div class="col">
-                                    <label for="language" class="form-label">Preferred language</label>
-                                    <select class="form-select">
-                                        <option>English</option>
-                                        <option>Vietnam</option>
-                                        <option>Chinese</option>
+                                    <label for="language" class="form-label" id ="language" name = "language">Preferred language</label>
+                                    <select class="form-select" id="language" name="language">
+                                        <option value="English">English</option>
+                                        <option value="Vietnam">Vietnam</option>
+                                        <option value="Chinese">Chinese</option>
                                     </select>
                                 </div>
                                 <div class="col">

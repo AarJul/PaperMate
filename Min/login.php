@@ -51,7 +51,7 @@ function login()
           // Successful login with user account
           // Save information to session or perform other actions
           $_SESSION['userid'] = $userResult['USERID'];
-          header("Location: homepage.php");
+          header("Location: ../Ivan/homepage.php");
           exit();
         } else {
           // echo "Incorrect password!";
