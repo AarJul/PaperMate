@@ -35,6 +35,9 @@
     <title>PostDetail</title>
 </head>
 <body>
+    <?php  echo $_SESSION['comment_count']; ?>
+    <button>Back</button>
+    <br>
     <?php 
     // In nội dung bài viết 
     $content = $detail['postcontent']->fetch_assoc(); 

@@ -1,7 +1,7 @@
 <?php
     include 'db_connect.php';
     $db = connect_db();
-
+    session_start();
     $documents = get_documents_list($db);
     
 ?>
@@ -14,6 +14,8 @@
     <title>DocumentList</title>
 </head>
 <body>
+    <button onclick="window.history.back()">Back</button>
+    <br>
     <input type="text" placeholder="検索">
 
     <?php while($row = $documents->fetch_assoc()): ?>
