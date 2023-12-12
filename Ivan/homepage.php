@@ -1,8 +1,10 @@
 <?php
+ session_start();
  include '../Quan/db_connect.php';
  $db = connect_db();
 
  $documents = get_documents_list($db);
+ print_r($_SESSION['userid'])
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +23,7 @@
             <img src="<?php echo $row['documentpics']; ?>">
         </div>
     <?php endwhile; ?>
-    <a href="todo.html">
+    <a href="todoinput.php">
         <button>Insert new Todo</button>
     </a>
     

@@ -1,4 +1,5 @@
 <?php
+session_start();
 $servername = "localhost";
 $username = "root";
 $password = "root";
@@ -11,16 +12,16 @@ if ($conn->connect_error) {
 }
 
 $name = $_POST['name'];
-$language = $_POST['language'];
+$userid = $_SESSION["userid"];
 
-$stmt = $conn->prepare("INSERT INTO todo (todoname) 
-                        VALUES (?, ?, ?, ?, ?)");
+$stmt = $conn->prepare("INSERT INTO todo (todoname,userid) 
+                        VALUES (?, ?)");
 
 if (!$stmt) {
     die('Error in statement preparation: ' . $conn->error);
 }
 
-$stmt->bind_param("sssss", $name, $telephone, $email, $hashedPassword, $language);
+$stmt->bind_param("sssss", $name, $userid);
 
 if ($stmt->execute()) {
     echo "Registration successful!";
