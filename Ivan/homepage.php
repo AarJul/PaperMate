@@ -4,7 +4,9 @@
  $db = connect_db();
 
  $documents = get_documents_list($db);
- print_r($_SESSION['userid'])
+ $userid = $_SESSION['userid'];
+
+ print_r($userid);
 ?>
 
 <!DOCTYPE html>
