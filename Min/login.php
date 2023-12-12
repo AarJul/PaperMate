@@ -50,7 +50,7 @@ function login()
         if (count($userResult) > 0 && password_verify($password, $userResult['password'])) {
           // Successful login with user account
           // Save information to session or perform other actions
-          $_SESSION['userid'] = $userResult['USERID'];
+          $_SESSION['userid'] = $userResult['userid'];
           header("Location: ../Ivan/homepage.php");
           exit();
         } else {

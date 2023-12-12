@@ -42,6 +42,7 @@ document.addEventListener("DOMContentLoaded", function() {
         option.addEventListener('click', function(event) {
             event.preventDefault();
             const lang = this.getAttribute('data-lang');
+            console.log('Language Clicked:', lang);
             setLanguage(lang);
         });
     });
