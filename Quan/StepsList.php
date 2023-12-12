@@ -1,8 +1,12 @@
 <?php
     include 'db_connect.php';
-    $db = connect_db();
-    $document_id = $_GET['id']; 
+    session_start();
+    $_SESSION['step_id'] = null;
 
+    $db = connect_db();
+    // $document_id = $_GET['id']; 
+    $document_id = $_SESSION['document_id'] === null ? $_GET['id'] : $_SESSION['document_id'];
+    $_SESSION['document_id'] = $document_id;
     // Gọi hàm lấy danh sách steps
     $steps = get_document_steps($document_id, $db); 
 ?>
@@ -14,15 +18,17 @@
     <title>Document</title>
 </head>
 <body>
-    <button onclick="window.history.back()">Back</button>
+    <?php echo $_SESSION['document_id']; ?>
+    <button onclick="window.location.href='DocumentList.php'">Back</button>
     <br>
     <?php while($row = $steps->fetch_assoc()): ?>
         <div>
             <a href="PostList.php?id=<?php echo $row['stepsid']; ?>"> 
+                <?php echo $row['stepsid']; ?>
                 <?php echo $row['stepsname']; ?>
             </a>
             <br>
-            <img src="images\640.jpg" alt="">
+            <!-- <img src="images\640.jpg" alt=""> -->
         </div>
     <?php endwhile; ?>
 </body>
