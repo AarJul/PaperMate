@@ -15,36 +15,36 @@
 
   <title>Login Page</title>
 </head>
-<div class="dropdown dropdown-language open">
-  <a href="#" class="dropdown-toggle btn-dark btn--language " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true" title="English">
-      <img alt="English" class="button-language btn-img flag" src="/Themes/TheCodeCampPro/Resources/Images/en.png">
-  </a>
-  <ul class="dropdown-menu">
-          <li>
-              <span class="change-lang" data-link="/language/setLanguageLocal?name=en&amp;redirectUrl=">
-                  <img alt="en" class="icon-language" src="/Themes/TheCodeCampPro/Resources/Images/en.png">
-                  English
-              </span>
-          </li>
-          <li>
-              <span class="change-lang" data-link="/language/setLanguageLocal?name=vn&amp;redirectUrl=">
-                  <img alt="vn" class="icon-language" src="img/vn.png">
-                  Tiếng Việt
-              </span>
-          </li>
-          <li>
-            <span class="change-lang" data-link="/language/setLanguageLocal?name=jp&amp;redirectUrl=">
-                <img alt="jp" class="icon-language" src="/Themes/TheCodeCampPro/Resources/Images/vn.png">
-                Japanese
-            </span>
-          </li>
-          <li>
-            <span class="change-lang" data-link="/language/setLanguageLocal?name=jp&amp;redirectUrl=">
-                <img alt="jp" class="icon-language" src="/Themes/TheCodeCampPro/Resources/Images/vn.png">
-                Indonesia
-            </span>
-          </li>
-  </ul>
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Select Language
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <li>
+        <span class="change-lang" data-lang="en">
+          English
+            <!-- English content -->
+        </span>
+    </li>
+    <li>
+        <span class="change-lang" data-lang="vn">
+          Tiếng Việt
+            <!-- Vietnamese content -->
+        </span>
+    </li>
+    <li>
+      <span class="change-lang" data-lang="jp">
+        日本語
+          <!-- Vietnamese content -->
+      </span>
+  </li>
+  <li>
+    <span class="change-lang" data-lang="indo">
+        <!-- Vietnamese content -->
+    </span>
+</li>
+    <!-- Add other language options similarly -->
+</ul>
 </div>
 <body style="height: 1000px">
 <form id="registration-form" method="post" action="login.php">
@@ -67,6 +67,7 @@
     <br />
     
   </div>
+  <script src="lang.js"></script>
 </body>
 
 </html>
