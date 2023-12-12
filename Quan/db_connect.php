@@ -111,4 +111,16 @@ function insert_comment($postid, $userid, $comment, $date, $db_conn){
   }
 }
 
+
+function create_new_post($step_id, $user_id, $postname, $postcontent, $date, $db_conn) {
+  $sql = "INSERT INTO post (stepsid, userid, postname, postcontent, date) VALUES ('$step_id', '$user_id', '$postname', '$postcontent', '$date')";
+  $result = $db_conn->query($sql);
+
+  if (!$result) {
+      // Xử lý lỗi
+      die("Lỗi truy vấn: " . $db_conn->error);
+  }
+}
+
+
 ?>
