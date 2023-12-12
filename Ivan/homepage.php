@@ -17,9 +17,13 @@
     <h1>List of procedures</h1>
     <?php while($row = $documents->fetch_assoc()): ?>
         <div>
+            <a href="StepsList.php?id=<?php echo $row['documentid']; ?>"><?php echo $row['documentname']; ?></a>
             <img src="<?php echo $row['documentpics']; ?>">
         </div>
     <?php endwhile; ?>
+    <a href="todo.html">
+        <button>Insert new Todo</button>
+    </a>
     
 </body>
 </html>
