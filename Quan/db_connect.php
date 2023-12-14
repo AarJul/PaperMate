@@ -40,8 +40,11 @@ function get_user_name($db_conn, $userid) {
   }
 }
 
-function get_todo_list($db_conn){
-  $sql = "SELECT * FROM todo";
+function get_todo_list($db_conn, $user_id){
+  $sql = "SELECT * FROM todo WHERE userid = ?";
+
+  $stmt = $db_conn->prepare($sql);
+  $stmt->bind_param("i", $user_id); // "i" represents the data type integer
   
   $todo_list = $db_conn->query($sql);
 
