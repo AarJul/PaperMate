@@ -40,6 +40,9 @@ await loadLanguageData(currentLanguage); // Load current language data if not al
 
 const languageDataObj = languageData[currentLanguage];
 
+const registerLink = document.querySelector(".new-register");
+registerLink.textContent = languageDataObj.registerText
+
 const titleEl = document.querySelector("h1");
 const subtitleEl = document.querySelector("h4");
 const emailInput = document.querySelector("input[name='email']");

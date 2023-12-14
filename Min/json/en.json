@@ -1,6 +1,7 @@
 {
     "title": "Login",
-    "subtitle": "If you don't have an account, register here",
+    "subtitle": "If you don't have an account,",
+    "registerText": "Register here",
     "emailPlaceholder": "Enter your email",
     "passwordPlaceholder": "Enter your password",
     "rememberPasswordLabel": "Remember password",
