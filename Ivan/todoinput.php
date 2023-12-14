@@ -38,7 +38,7 @@ session_start();
                             <br>
                             <div class="mb-3 mt-3">
                                 <label for="Username" class="form-label">Todo</label>
-                                <input type="text" class="form-control" id="name" placeholder="Enter Username"
+                                <input type="text" class="form-control" id="name" placeholder="Enter Todo"
                                     name="name">
                             </div>
                                 <div class="col">
