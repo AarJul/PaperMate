@@ -40,6 +40,14 @@ function get_user_name($db_conn, $userid) {
   }
 }
 
+function get_todo_list($db_conn){
+  $sql = "SELECT * FROM todo";
+  
+  $todo_list = $db_conn->query($sql);
+
+  return $todo_list;
+}
+
 function get_documents_list($db_conn) {
   // SQL query with Prepared Statement
   $sql = "SELECT * FROM document";
