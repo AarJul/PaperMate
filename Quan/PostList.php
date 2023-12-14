@@ -2,19 +2,14 @@
 session_start();
 include 'db_connect.php';
 $db = connect_db();
-// // $step_id = $_GET['id'];
 $step_id = $_SESSION['step_id'] === null ? $_GET['id'] : $_SESSION['step_id'];
-
 $_SESSION['step_id'] = $step_id;
-// Gọi hàm lấy danh sách bài viết
 $posts = get_step_posts($step_id, $db); 
 ?>
 
 <!DOCTYPE html>
 <html>
 <body>
-    <?php echo $step_id; ?>
-    <?php echo $_SESSION['step_id']; ?>
     <button onclick="window.location.href='StepsList.php'">Back</button>
     <br>
     <?php if ($posts && $posts->num_rows > 0): ?>
