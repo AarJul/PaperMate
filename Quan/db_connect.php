@@ -40,15 +40,16 @@ function get_user_name($db_conn, $userid) {
   }
 }
 
-function get_todo_list($db_conn, $user_id){
+function get_todo_list($db_conn, $userid){
   $sql = "SELECT * FROM todo WHERE userid = ?";
 
   $stmt = $db_conn->prepare($sql);
-  $stmt->bind_param("i", $user_id); // "i" represents the data type integer
+  $stmt->bind_param("i", $userid); // "i" represents the data type integer
   
-  $todo_list = $db_conn->query($sql);
+  $stmt->execute();
+  $result = $stmt->get_result();
 
-  return $todo_list;
+  return $result;
 }
 
 function get_documents_list($db_conn) {
