@@ -24,6 +24,9 @@
             <img src="<?php echo $row['documentpics']; ?>">
         </div>
     <?php endwhile; ?>
+    <a href="../Quan/DocumentList.php">
+        <button>Go to available documents</button>
+    </a>
     <h1>Todo</h1>
     <?php while($row = $todo->fetch_assoc()): ?>
         <div>
