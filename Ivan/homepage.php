@@ -6,7 +6,6 @@
  $documents = get_documents_list($db);
  $userid = $_SESSION['userid'];
 
- print_r($userid);
 ?>
 
 <!DOCTYPE html>
@@ -25,6 +24,7 @@
             <img src="<?php echo $row['documentpics']; ?>">
         </div>
     <?php endwhile; ?>
+    <h1>Todo</h1>
     <a href="todoinput.php">
         <button>Insert new Todo</button>
     </a>

@@ -14,18 +14,18 @@ if ($conn->connect_error) {
 $name = $_POST['name'];
 $userid = $_SESSION["userid"];
 
-$stmt = $conn->prepare("INSERT INTO todo (todoname,userid) 
+$stmt = $conn->prepare("INSERT INTO todo (todoname, userid) 
                         VALUES (?, ?)");
 
 if (!$stmt) {
     die('Error in statement preparation: ' . $conn->error);
 }
 
-$stmt->bind_param("sssss", $name, $userid);
+$stmt->bind_param("si", $name, $userid);
 
 if ($stmt->execute()) {
     echo "Registration successful!";
-    header("Location: ../Min/login.html");
+    header("Location: homepage.php");
 } else {
     echo "Error: " . $stmt->error;
 }
