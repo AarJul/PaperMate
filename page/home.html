@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New Account</title>
 
+    <link rel="stylesheet" href="style/home.css">
+
     <!-- import script -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -15,54 +17,129 @@
 
 <body>
     <div id="app">
-        <div class="header">
             <ul class="navbar navbar-expand-sm bg-dark navbar-dark">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="#">PaperMate</a>
                 </div>
             </ul>
         </div>
-
+ 
         <div class="container-fluid">
             <!-- main -->
             <div class="main">
                 <h1 class="text-center">Welcome,　　　</h1>
                 <h2 class="text-center">{{user}} さん</h2>
-                <h2 class="text-center">What do you want to do today?</h2>
+                <h2 class="th7 text-center">What do you want to do today?</h2>
                 <br>
-                <div class="row justify-content-center align-items-center g-2">
+                <div class="row card-padding">
                     <div class="col">
                         <a href="#">
-                        <div class="card text-center">
-                            <img class="card-img-top" src="" alt="Title">
-                            <div class="card-body">
-                                <h4 class="card-title">Title</h4>
-                                <p class="card-text">Body</p>
+                            <div class="card text-center">
+                                <img class="card-img-top" src="" alt="Title">
+                                <div class="card-body">
+                                    <h4 class="card-title">Document List</h4>
+                                    <p class="card-text">Body</p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
+                        </a>
+                        <a href="#">
+                            <div class="card text-center">
+                                <img class="card-img-top" src="" alt="Title">
+                                <div class="card-body">
+                                    <h4 class="card-title">Make new To-Do-List</h4>
+                                    <p class="card-text">Body</p>
+                                </div>
+                            </div>
+                        </a>
+                        <!-- to do list table -->
+                        <table class="table table-hover table-warning table-borderless ">
+                            <thead>
+                              <tr>
+                                <th class="" colspan="3">
+                                    <h2>Your TO DO LIST</h2>
+                                </th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>John</td>
+                                <td>Doe</td>
+                                <td>john@example.com</td>
+                              </tr>
+                              <tr>
+                                <td>Mary</td>
+                                <td>Moe</td>
+                                <td>mary@example.com</td>
+                              </tr>
+                              <tr>
+                                <td>July</td>
+                                <td>Dooley</td>
+                                <td>july@example.com</td>
+                              </tr>
+                            </tbody>
+                          </table>
                     </div>
                     <div class="col">
-                        <a href="#">
-                        <div class="card text-center">
-                            <img class="card-img-top" src="" alt="Title">
-                            <div class="card-body">
-                                <h4 class="card-title">Title</h4>
-                                <p class="card-text">Body</p>
+                        <div class="row g-2">
+                            <div class="col">
+                                <a href="#">
+                                    <div class="card text-center">
+                                        <img class="card-img-top" src="" alt="Title">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Just moved to Japan</h4>
+                                            <p class="card-text">Body</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col">
+                                <a href="#">
+                                    <div class="card text-center">
+                                        <img class="card-img-top" src="" alt="Title">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Go to Hospital</h4>
+                                            <p class="card-text">Body</p>
+                                        </div>
+                                    </div>
+                                </a>
                             </div>
                         </div>
-                        </a>
-                    </div>
-                    <div class="col">
-                        <a href="#">
-                        <div class="card text-center">
-                            <img class="card-img-top" src="" alt="Title">
-                            <div class="card-body">
-                                <h4 class="card-title">Title</h4>
-                                <p class="card-text">Body</p>
-                            </div>
-                        </div>
-                        </a>
+                        <table class="table table-hover table-warning table-borderless ">
+                            <thead>
+                              <tr>
+                                <th class="" colspan="3">
+                                    <h2>Latest Post</h2>
+                                </th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>John</td>
+                                <td>Doe</td>
+                                <td>john@example.com</td>
+                              </tr>
+                              <tr>
+                                <td>Mary</td>
+                                <td>Moe</td>
+                                <td>mary@example.com</td>
+                              </tr>
+                              <tr>
+                                <td>July</td>
+                                <td>Dooley</td>
+                                <td>july@example.com</td>
+                              </tr>
+                              <!-- see more button -->
+                              <tr>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <button type="button" class="">
+
+                                    </button>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
                     </div>
                 </div>
             </div>

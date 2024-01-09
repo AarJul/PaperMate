@@ -5,8 +5,7 @@
 
  $documents = get_documents_list($db);
  $userid = $_SESSION['userid'];
-
- print_r($userid);
+ $todo = get_todo_list($db,$userid);
 ?>
 
 <!DOCTYPE html>
@@ -23,6 +22,15 @@
         <div>
             <a href="StepsList.php?id=<?php echo $row['documentid']; ?>"><?php echo $row['documentname']; ?></a>
             <img src="<?php echo $row['documentpics']; ?>">
+        </div>
+    <?php endwhile; ?>
+    <a href="../Quan/DocumentList.php">
+        <button>Go to available documents</button>
+    </a>
+    <h1>Todo</h1>
+    <?php while($row = $todo->fetch_assoc()): ?>
+        <div>
+            <a href="StepsList.php?id=<?php echo $row['todoid']; ?>"><?php echo $row['todoname']; ?></a>
         </div>
     <?php endwhile; ?>
     <a href="todoinput.php">

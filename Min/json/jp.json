@@ -1,6 +1,7 @@
 {
     "title": "ログイン",
-    "subtitle": "アカウントをお持ちでない方は、新規登録",
+    "subtitle": "アカウントをお持ちでない方は",
+    "registerText": "新規登録",
     "emailPlaceholder": "メールアドレスを入力",
     "passwordPlaceholder": "パスワードを入力",
     "rememberPasswordLabel": "パスワードを記憶する",

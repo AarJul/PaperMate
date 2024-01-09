@@ -1,6 +1,7 @@
 {
     "title": "Masuk",
-    "subtitle": "Jika Anda belum memiliki akun, daftar di sini",
+    "subtitle": "Jika Anda belum memiliki akun,",
+    "registerText": "daftar di sini",
     "emailPlaceholder": "Masukkan email Anda",
     "passwordPlaceholder": "Masukkan kata sandi Anda",
     "rememberPasswordLabel": "Ingat kata sandi",
