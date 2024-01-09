@@ -40,15 +40,18 @@ await loadLanguageData(currentLanguage); // Load current language data if not al
 
 const languageDataObj = languageData[currentLanguage];
 
-const registerLink = document.querySelector(".new-register");
-registerLink.textContent = languageDataObj.registerText
-
 const titleEl = document.querySelector("h1");
-const subtitleEl = document.querySelector("h4");
+const subtitleEl = document.querySelector(".specific-subtitle");
+const registerLink = document.querySelector(".new-register");
 const emailInput = document.querySelector("input[name='email']");
 const passwordInput = document.querySelector("input[name='password']");
 const rememberPasswordLabel = document.querySelector("label[for='pass_save']");
 const loginBtn = document.querySelector("button[name='login']");
+
+const defaultLink = registerLink.getAttribute("data-lang-link");
+registerLink.textContent = languageDataObj.registerText
+console.log(languageDataObj.registerText)
+registerLink.href = defaultLink;
 
 titleEl.textContent = languageDataObj.title;
 subtitleEl.textContent = languageDataObj.subtitle;
