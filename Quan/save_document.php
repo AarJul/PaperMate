@@ -57,13 +57,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         function collectData() {
             var documentname = document.getElementById('documentname').value;
-            var documentimglink = document.getElementById('documentimglink').value;
+            var documentimglink =  document.getElementById('documentimglink').value;
             var steps = [];
             var imageLinks = [];
             var stepCount = document.getElementById('steps').value;
+
             for (var i = 0; i < stepCount; i++) {
-                steps.push(document.getElementsByName('step' + (i + 1))[0].value);
-                imageLinks.push(document.getElementsByName('imageLink' + (i + 1))[0].value);
+                var stepInput = document.getElementsByName('step' + (i + 1))[0];
+                var imageLinkInput = document.getElementsByName('imageLink' + (i + 1))[0];
+
+                // Thêm đường dẫn trước tên link ảnh nếu chưa có
+                var stepValue = stepInput.value.trim();
+                var imageLinkValue = imageLinkInput.value.trim();
+
+                steps.push(stepValue);
+                imageLinks.push(imageLinkValue ? "../document_images/" + imageLinkValue : "");
             }
 
             // Tạo các input ẩn để gửi mảng steps và imageLinks dưới dạng chuỗi JSON
