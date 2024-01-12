@@ -1,4 +1,5 @@
 {
+  "login": {
     "title": "Đăng nhập",
     "subtitle": "Nếu bạn chưa có tài khoản, đăng ký",
     "registerText": "tại đây",
@@ -6,5 +7,17 @@
     "passwordPlaceholder": "Nhập mật khẩu của bạn",
     "rememberPasswordLabel": "Ghi nhớ mật khẩu",
     "loginButton": "Đăng nhập"
+  },
+  "register": {
+    "title": "Đăng ký tài khoản mới",
+    "usernameLabel": "Tên người dùng:",
+    "emailLabel": "Email:",
+    "passwordLabel": "Mật khẩu:",
+    "reenterPasswordLabel": "Nhập lại mật khẩu:",
+    "telephoneLabel": "Số điện thoại:",
+    "preferredLanguageLabel": "Ngôn ngữ ưu tiên",
+    "registerButton": "ĐĂNG KÝ",
+    "advertisement": "Quảng cáo"
   }
+}
   
