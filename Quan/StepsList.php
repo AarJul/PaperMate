@@ -21,6 +21,10 @@
         <div>
             <a href="PostList.php?id=<?php echo $row['stepsid']; ?>"> 
                 <?php echo $row['stepsname']; ?>
+                <img src="<?php 
+                    echo '../document_images/'; 
+                    echo $row['stepspic']; 
+                ?>">
             </a>
             <br>
             <!-- <img src="..\images\<?php //echo $row['stepspic']; ?>" alt=""> -->

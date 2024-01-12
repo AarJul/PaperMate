@@ -63,9 +63,30 @@ function get_documents_list($db_conn) {
   return $documents_list;
 }
 
+function get_documents_list_json($db_conn) {
+  $documents_list = get_documents_list($db_conn);
+
+  // Chuẩn bị một mảng để lưu thông tin của các tài liệu
+  $documents_array = array();
+
+  // Lấy từng hàng và thêm vào mảng
+  while ($row = $documents_list->fetch_assoc()) {
+      $documents_array[] = array(
+          'documentid' => $row['documentid'],
+          'documentname' => $row['documentname'],
+          'documentpics' => $row['documentpics'],
+          // Thêm các trường khác nếu cần
+      );
+  }
+
+  // Trả về dưới dạng JSON
+  return json_encode(['documents' => $documents_array]);
+}
+
+
 function get_document_steps($document_id, $db_conn) {
   // SQL query with Prepared Statement
-  $sql = "SELECT stepsid, stepsname FROM steps WHERE documentid = ?";
+  $sql = "SELECT stepsid, stepsname, stepspic FROM steps WHERE documentid = ?";
   
   // Prepare the query with a Prepared Statement
   $stmt = $db_conn->prepare($sql);
@@ -168,6 +189,89 @@ function create_new_post($step_id, $user_id, $postname, $postcontent, $date, $db
   }
 }
 
+
+
+function save_document($documentname, $documentimglink, $steps, $db_conn){
+  // $sql_insert = "INSERT INTO document (documentname, documentpics) VALUES ('$documentname', '$documentimglink')";
+  // if ($db_conn->query($sql_insert) === TRUE) {
+  //     echo "Dữ liệu đã được thêm thành công.";
+  // } else {
+  //     echo "Lỗi: " . $sql_insert . "<br>" . $db_conn->error;
+  //     return; 
+  // }
+  $sql_insert = "INSERT INTO document (documentname, documentpics) VALUES (?, ?)";
+
+  // Sử dụng prepared statement để tránh SQL injection
+  $stmt = $db_conn->prepare($sql_insert);
+
+  // Kiểm tra xem prepared statement có được tạo đúng không
+  if ($stmt === FALSE) {
+      die("Lỗi khi tạo prepared statement: " . $db_conn->error);
+  }
+
+  // Đọc dữ liệu hình ảnh từ URL
+  $documentimglink = "../document_images/" . $documentimglink;
+  $imageData = file_get_contents($documentimglink);
+
+  if ($imageData !== FALSE) {
+      // Tiếp tục xử lý dữ liệu ảnh...
+  } else {
+      echo "Lỗi khi đọc tập tin ảnh.";
+  }
+
+  $base64Image = base64_encode($imageData);
+  // Chỉ thực hiện nếu prepared statement được tạo thành công
+  $stmt->bind_param("ss", $documentname, $base64Image);
+
+  if ($stmt->execute() !== TRUE) {
+      echo "Lỗi: " . $sql_insert . "<br>" . $stmt->error;
+  }
+
+  // Đóng prepared statement
+  $stmt->close();
+
+  $sql_select = "SELECT documentid FROM document WHERE documentname = '$documentname'";
+  $result = $db_conn->query($sql_select);
+
+  if ($result) {
+      if ($result->num_rows > 0) {
+          $row = $result->fetch_assoc();
+          $documentid = $row["documentid"];
+          echo "Document ID: " . $documentid;
+          // foreach ($steps as $step) {
+          //     $stepname = $step['step'];
+          //     $steppics = $step['imageLink'];
+
+          //     $sql_insert_step = "INSERT INTO steps (documentid, stepsname, stepspic) VALUES ('$documentid', '$stepname', '$steppics')";
+          //     if ($db_conn->query($sql_insert_step) !== TRUE) {
+          //         echo "Lỗi: " . $sql_insert_step . "<br>" . $db_conn->error;
+          //     }
+          // }
+          foreach ($steps as $step) {
+            $stepname = $step['step'];
+            $imageLink = $step['imageLink'];
+        
+            // Đọc dữ liệu hình ảnh từ URL
+            $imageData = file_get_contents($imageLink);
+        
+            // Chuyển dữ liệu hình ảnh sang dạng chuỗi base64
+            $base64Image = base64_encode($imageData);
+        
+            $sql_insert_step = "INSERT INTO steps (documentid, stepsname, stepspic) VALUES ('$documentid', '$stepname', '$base64Image')";
+        
+            if ($db_conn->query($sql_insert_step) !== TRUE) {
+                echo "Lỗi: " . $sql_insert_step . "<br>" . $db_conn->error;
+            }
+        }        
+      } else {
+          echo "Không tìm thấy tài liệu có tên '$documentname'";
+      }
+  } else {
+      echo "Lỗi: " . $sql_select . "<br>" . $db_conn->error;
+  }
+
+  $db_conn->close();
+}
 
 
 ?>

@@ -1,6 +1,33 @@
+<?php
+function delete_todo_item($db, $todoid) {
+    $sql = "DELETE FROM todo WHERE todoid = ?";
+    $stmt = $db->prepare($sql);
+    $stmt->bind_param("i", $todoid);
+    return $stmt->execute();
+}
+session_start();
+include '../Quan/db_connect.php';
+$db = connect_db();
+
+if (isset($_POST['delete_todo'])) {
+    $todoid = $_POST['todoid'];
+    $result = delete_todo_item($db, $todoid);
+
+    if ($result) {
+        // Refresh the page after deletion or perform any other action
+        header("Location: home.php");
+    } else {
+        echo "Error deleting todo item.";
+    }
+}
+$documents = get_documents_list($db);
+$userid = $_SESSION['userid'];
+$username = get_user_name($db, $userid);
+$todo = get_todo_list($db, $userid);
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,9 +54,7 @@
         <div class="container-fluid">
             <!-- main -->
             <div class="main">
-                <h1 class="text-center">Welcome,　　　</h1>
-                <h2 class="text-center">{{user}} さん</h2>
-                <h2 class="th7 text-center">What do you want to do today?</h2>
+                <h1 class="text-center">Welcome, <?php echo $username; ?></h1>
                 <br>
                 <div class="row card-padding">
                     <div class="col">
@@ -42,7 +67,7 @@
                                 </div>
                             </div>
                         </a>
-                        <a href="#">
+                        <a href="todoinput.php">
                             <div class="card text-center">
                                 <img class="card-img-top" src="" alt="Title">
                                 <div class="card-body">
@@ -60,23 +85,19 @@
                                 </th>
                               </tr>
                             </thead>
-                            <tbody>
+                            <tbody><?php while($row = $todo->fetch_assoc()): ?>
                               <tr>
-                                <td>John</td>
-                                <td>Doe</td>
-                                <td>john@example.com</td>
-                              </tr>
-                              <tr>
-                                <td>Mary</td>
-                                <td>Moe</td>
-                                <td>mary@example.com</td>
-                              </tr>
-                              <tr>
-                                <td>July</td>
-                                <td>Dooley</td>
-                                <td>july@example.com</td>
+                                <td><?php echo $row['todoname']; ?></a></td>
+                                <td>
+                                    <form method="post">
+                                        <input type="hidden" name="todoid" value="<?php echo $row['todoid']; ?>">
+                                        <button type="submit" name="delete_todo" class="btn btn-danger btn-sm">Delete</button>
+                                    </form>
+                                </td>
                               </tr>
                             </tbody>
+                            <?php endwhile; ?>
+
                           </table>
                     </div>
                     <div class="col">
@@ -112,33 +133,14 @@
                                 </th>
                               </tr>
                             </thead>
-                            <tbody>
+                            <tbody><?php while($row = $documents->fetch_assoc()): ?>
                               <tr>
-                                <td>John</td>
-                                <td>Doe</td>
+                                <td><a href="StepsList.php?id=<?php echo $row['documentid']; ?>"><?php echo $row['documentname']; ?></a></td>
+                                <td><img src="<?php echo $row['documentpics']; ?>"></td>
                                 <td>john@example.com</td>
                               </tr>
-                              <tr>
-                                <td>Mary</td>
-                                <td>Moe</td>
-                                <td>mary@example.com</td>
-                              </tr>
-                              <tr>
-                                <td>July</td>
-                                <td>Dooley</td>
-                                <td>july@example.com</td>
-                              </tr>
-                              <!-- see more button -->
-                              <tr>
-                                <td></td>
-                                <td></td>
-                                <td>
-                                    <button type="button" class="">
-
-                                    </button>
-                                </td>
-                              </tr>
-                            </tbody>
+                              
+                            </tbody><?php endwhile; ?>
                           </table>
                     </div>
                 </div>

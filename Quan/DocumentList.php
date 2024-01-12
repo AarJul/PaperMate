@@ -22,7 +22,10 @@
         <?php while($row = $documents->fetch_assoc()): ?>
             <div class="documentItem" data-documentname="<?php echo $row['documentname']; ?>">
                 <a href="StepsList.php?id=<?php echo $row['documentid']; ?>"><?php echo $row['documentname']; ?></a>
-                <img src="<?php echo $row['documentpics']; ?>">
+                <img src="<?php 
+                    echo '../document_images/'; 
+                    echo $row['documentpics']; 
+                ?>">
             </div>
         <?php endwhile; ?>
     </div>
