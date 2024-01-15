@@ -100,6 +100,27 @@ function get_document_steps($document_id, $db_conn) {
   return $steps_list;
 }
 
+function get_document_steps_json($document_id, $db_conn) {
+  // Gọi hàm get_document_steps để lấy danh sách bước từ cơ sở dữ liệu
+  $steps_list = get_document_steps($document_id, $db_conn);
+
+  // Chuẩn bị một mảng để lưu thông tin của các bước
+  $steps_array = array();
+
+  // Lấy từng hàng và thêm vào mảng
+  while ($row = $steps_list->fetch_assoc()) {
+      $steps_array[] = array(
+          'stepsid' => $row['stepsid'],
+          'stepsname' => $row['stepsname'],
+          'stepspic' => $row['stepspic'],
+          // Thêm các trường khác nếu cần
+      );
+  }
+
+  // Trả về dưới dạng JSON
+  return json_encode(['steps' => $steps_array]);
+}
+
 function get_step_posts($step_id, $db_conn) {
   // SQL query with Prepared Statement
   $sql = "SELECT postid, postname FROM post WHERE stepsid = ?";
@@ -114,6 +135,26 @@ function get_step_posts($step_id, $db_conn) {
 
   // Return the result
   return $post_list;
+}
+
+function get_step_posts_json($step_id, $db_conn) {
+  // Gọi hàm get_step_posts để lấy danh sách bài viết từ cơ sở dữ liệu
+  $post_list = get_step_posts($step_id, $db_conn);
+
+  // Chuẩn bị một mảng để lưu thông tin của các bài viết
+  $posts_array = array();
+
+  // Lấy từng hàng và thêm vào mảng
+  while ($row = $post_list->fetch_assoc()) {
+      $posts_array[] = array(
+          'postid' => $row['postid'],
+          'postname' => $row['postname'],
+          // Thêm các trường khác nếu cần
+      );
+  }
+
+  // Trả về dưới dạng JSON
+  return json_encode(['posts' => $posts_array]);
 }
 
 function get_post_detail($post_id, $db_conn) {
@@ -154,6 +195,17 @@ function get_post_detail($post_id, $db_conn) {
   return $post_detail; 
 }
 
+function get_post_detail_json($post_id, $db_conn) {
+  // Call the get_post_detail function to retrieve post details
+  $post_detail = get_post_detail($post_id, $db_conn);
+
+  // Convert the associative array to JSON
+  $post_detail_json = json_encode($post_detail);
+
+  // Return the JSON string
+  return $post_detail_json;
+}
+
 
 function insert_comment($postid, $userid, $comment, $date, $db_conn) {
   // SQL query with Prepared Statement
@@ -192,13 +244,7 @@ function create_new_post($step_id, $user_id, $postname, $postcontent, $date, $db
 
 
 function save_document($documentname, $documentimglink, $steps, $db_conn){
-  // $sql_insert = "INSERT INTO document (documentname, documentpics) VALUES ('$documentname', '$documentimglink')";
-  // if ($db_conn->query($sql_insert) === TRUE) {
-  //     echo "Dữ liệu đã được thêm thành công.";
-  // } else {
-  //     echo "Lỗi: " . $sql_insert . "<br>" . $db_conn->error;
-  //     return; 
-  // }
+
   $sql_insert = "INSERT INTO document (documentname, documentpics) VALUES (?, ?)";
 
   // Sử dụng prepared statement để tránh SQL injection
@@ -220,14 +266,13 @@ function save_document($documentname, $documentimglink, $steps, $db_conn){
   }
 
   $base64Image = base64_encode($imageData);
-  // Chỉ thực hiện nếu prepared statement được tạo thành công
+
   $stmt->bind_param("ss", $documentname, $base64Image);
 
   if ($stmt->execute() !== TRUE) {
       echo "Lỗi: " . $sql_insert . "<br>" . $stmt->error;
   }
 
-  // Đóng prepared statement
   $stmt->close();
 
   $sql_select = "SELECT documentid FROM document WHERE documentname = '$documentname'";
@@ -238,15 +283,7 @@ function save_document($documentname, $documentimglink, $steps, $db_conn){
           $row = $result->fetch_assoc();
           $documentid = $row["documentid"];
           echo "Document ID: " . $documentid;
-          // foreach ($steps as $step) {
-          //     $stepname = $step['step'];
-          //     $steppics = $step['imageLink'];
-
-          //     $sql_insert_step = "INSERT INTO steps (documentid, stepsname, stepspic) VALUES ('$documentid', '$stepname', '$steppics')";
-          //     if ($db_conn->query($sql_insert_step) !== TRUE) {
-          //         echo "Lỗi: " . $sql_insert_step . "<br>" . $db_conn->error;
-          //     }
-          // }
+         
           foreach ($steps as $step) {
             $stepname = $step['step'];
             $imageLink = $step['imageLink'];
