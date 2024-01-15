@@ -25,7 +25,7 @@
 
     if ($stmt->execute()) {
         echo "Registration successful!";
-        header("Location: homepage.php");
+        header("Location: home.php");
     } else {
         echo "Error: " . $stmt->error;
     }
