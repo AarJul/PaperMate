@@ -1,4 +1,5 @@
 {
+  "login": {
     "title": "ログイン",
     "subtitle": "アカウントをお持ちでない方は",
     "registerText": "新規登録",
@@ -6,5 +7,18 @@
     "passwordPlaceholder": "パスワードを入力",
     "rememberPasswordLabel": "パスワードを記憶する",
     "loginButton": "ログイン"
+  },
+  "register": {
+    "title": "新しいアカウントを登録する",
+    "usernameLabel": "ユーザー名：",
+    "emailLabel": "Eメール：",
+    "passwordLabel": "パスワード：",
+    "reenterPasswordLabel": "パスワードを再入力してください：",
+    "telephoneLabel": "電話番号：",
+    "preferredLanguageLabel": "優先言語",
+    "registerButton": "登録する",
+    "advertisement": "広告"
   }
+}
+    
   
