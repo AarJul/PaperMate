@@ -25,7 +25,7 @@
                 <a href="getAllSteps_json.php?id=<?php echo $row['documentid']; ?>"><?php echo $row['documentname']; ?></a>
 
                 <img src="<?php 
-                    echo 'document_images/'; 
+                    echo '../document_images/'; 
                     echo $row['documentpics']; 
                 ?>">
             </div>
