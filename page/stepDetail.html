@@ -17,24 +17,62 @@
 
 <body>
     <div id="app">
-            <ul class="navbar navbar-expand-sm bg-dark navbar-dark">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#">PaperMate</a>
+        <ul class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">PaperMate</a>
+            </div>
+        </ul>
+    </div>
+
+    <div class="container-fluid">
+        <!-- main -->
+        <div class="main">
+            <div id="stepPage">
+                <div class="row">
+                    <div class="mt-4 p-5 bg-secondary text-black rounded d-flex">
+                        <div class="col-sm-8">
+                            <h1 id="stepTitle">Step Title Here</h1>
+                            <p id="stepDetail">step detail here</p>
+                        </div>
+                        <div class="col-sm-4">
+                            <img src="cinqueterre.jpg" class="img-thumbnail" alt="Cinque Terre">
+                        </div>
+                    </div>
                 </div>
-            </ul>
-        </div>
- 
-        <div class="container-fluid">
-            <!-- main -->
-            <div class="main">
-                
             </div>
             <br>
-            <!-- footer -->
-            <div class="mt-4 p-5 bg-secondary p-3 text-white rounded">
-                <h1>広告</h1>
+            <div class="d-flex flex-row-reverse bd-highlight">
+                <button type="button" class="btn btn-danger">New Post</button>
+            </div>
+            <div id="post">
+                <table class="table table-hover table-warning table-borderless ">
+                    <thead>
+                        <tr>
+                            <th class="" colspan="2">
+                                <h2 class="text-center">Post</h2>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th class="text-center" colspan="1">
+                                Title
+                            </th>
+                            <th class="text-center" colspan="1">
+                                Author
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="postData">
+                            <td>Just moved here lol</td>
+                            <td>John Doe</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
+        <br>
+        <!-- footer -->
+    </div>
     </div>
     <!-- bottom navbar -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-bottom bg-danger">
