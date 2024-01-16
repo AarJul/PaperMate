@@ -1,4 +1,5 @@
 {
+  "login": {
     "title": "Masuk",
     "subtitle": "Jika Anda belum memiliki akun,",
     "registerText": "daftar di sini",
@@ -6,5 +7,18 @@
     "passwordPlaceholder": "Masukkan kata sandi Anda",
     "rememberPasswordLabel": "Ingat kata sandi",
     "loginButton": "Masuk"
+  },
+  "register": {
+    "title": "Daftar Akun Baru",
+    "usernameLabel": "Nama Pengguna:",
+    "emailLabel": "Email:",
+    "passwordLabel": "Kata Sandi:",
+    "reenterPasswordLabel": "Masukkan Kata Sandi Kembali:",
+    "telephoneLabel": "Telepon:",
+    "preferredLanguageLabel": "Bahasa Pilihan",
+    "registerButton": "DAFTAR",
+    "advertisement": "Iklan"
   }
-  
+}
+      
+    
