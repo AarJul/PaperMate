@@ -17,35 +17,34 @@
 </head>
 <div class="dropdown">
   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Select Language
+    <span id="selectedLanguage">Select Language</span>
   </button>
   <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
     <li>
-        <span class="change-lang" data-lang="en">
-          English
-            <!-- English content -->
-        </span>
+        <span class="dropdown-item change-lang" data-lang="en">English</span>
     </li>
     <li>
-        <span class="change-lang" data-lang="vi">
-          Tiếng Việt
-            <!-- Vietnamese content -->
-        </span>
+        <span class="dropdown-item change-lang" data-lang="vi">Tiếng Việt</span>
     </li>
     <li>
-      <span class="change-lang" data-lang="jp">
-        日本語
-          
-      </span>
-  </li>
-  <li>
-    <span class="change-lang" data-lang="indo">
-        Indonesia
-    </span>
-</li>
+      <span class="dropdown-item change-lang" data-lang="jp">日本語</span>
+    </li>
+    <li>
+      <span class="dropdown-item change-lang" data-lang="indo">Indonesia</span>
+    </li>
     <!-- Add other language options similarly -->
-</ul>
+  </ul>
 </div>
+<script>
+  // Thêm sự kiện click cho mỗi mục trong dropdown
+  $('.change-lang').on('click', function() {
+    // Lấy giá trị data-lang từ mục được chọn
+    var selectedLang = $(this).data('lang');
+    
+    // Thay đổi nội dung của phần tử có id là "selectedLanguage"
+    $('#selectedLanguage').text(selectedLang);
+  });
+</script>
 <body style="height: 1000px">
 <form id="registration-form" method="post" action="login.php">
   <div class="container" style="margin-top: 70px;">
