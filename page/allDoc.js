@@ -1,27 +1,30 @@
-// Assuming data is an array of objects containing the title, image path, and description
-const data = [
-    { title: '投稿タイトル 1', imagePath: 'path/to/image1.jpg', description: '写真 1 の説明' },
-    { title: '投稿タイトル 2', imagePath: 'path/to/image2.jpg', description: '写真 2 の説明' },
-    // Add more data here
-  ];
-  
-  const template = document.getElementById('document');
-  const row = document.querySelector('.row.grid-container');
-  
-  data.forEach(item => {
-    const clone = template.content.cloneNode(true);
-    const title = clone.querySelector('h3');
-    const image = clone.querySelector('img');
-    const description = clone.querySelector('p');
-  
-    title.textContent = item.title;
-    image.src = item.imagePath;
-    image.alt = item.title;
-    description.textContent = item.description;
-  
-    // Apply the grid-item class to each cloned item
-    clone.classList.add('template');
-  
-    row.appendChild(clone);
-  });
-  
+// Use the CDN version of Axios
+const axios = window.axios;
+
+const app = Vue.createApp({
+    data() {
+        return {
+            data: null,
+        };
+    },
+    mounted() {
+        axios.get('./Quan/getAllDoc_json.php') // Adjust the path here
+            .then(response => (this.data = response.data))
+            .catch(error => console.error(error));
+    },
+});
+
+app.component('document-item', {
+    props: ['title', 'imagePath', 'description'],
+    template: `
+        <div class="grid-item">
+            <h3>{{ title }}</h3>
+            <div class="d-flex">
+                <img :src="imagePath" :alt="title" class="img-fluid mb-3">
+                <p class="mt-auto mb-auto ms-3">{{ description }}</p>
+            </div>
+        </div>
+    `,
+});
+
+app.mount('#app');
