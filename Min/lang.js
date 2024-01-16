@@ -32,18 +32,6 @@ function setLanguage(lang) {
     dropdownButton.textContent = getLanguageText(lang);
 }
 
-// const defaultLanguage = "en"; // Set your default language here
-// let currentLanguage = defaultLanguage;
-// loadLanguageData(defaultLanguage) // Load default language data
-
-// // Change language when clicking on dropdown menu items
-// const changeLanguage = (event) => {
-// currentLanguage = event.target.dataset.lang;
-// localStorage.setItem("currentLanguage", currentLanguage);
-// console.log(localStorage.getItem("currentLanguage"))
-// updateLanguageContent();
-
-// };
 
 // Update the UI content with the current language
 const updateLanguageContent = () => {
@@ -68,28 +56,6 @@ const updateLanguageContent = () => {
     passwordInput.placeholder = loginData.passwordPlaceholder;
     rememberPasswordLabel.textContent = loginData.rememberPasswordLabel;
     loginBtn.textContent = loginData.loginButton;
-
-    // Update UI with register data
-    const regisTitle = document.querySelector("h2");
-    const usernameLabelEl = document.querySelector(".username");
-    const emailLabelEl = document.querySelector(".email");
-    const passwordLabelEl = document.querySelector(".password");
-    const reenterPasswordLabelEl = document.querySelector(".rePassword");
-    const telephoneLabelEl = document.querySelector(".telephone");
-    const preferredLanguageLabelEl = document.querySelector(".PreferredLang");
-    const registerButton = document.querySelector("button[name='register']");
-    //const advertisementEl = document.querySelector(".advertisement");
-    
-    console.log(usernameLabelEl)
-    //regisTitle.textContent = registerData.title
-    usernameLabelEl.textContent = registerData.usernameLabel;
-    emailLabelEl.textContent = registerData.emailLabel;
-    passwordLabelEl.textContent = registerData.passwordLabel;
-    reenterPasswordLabelEl.textContent = registerData.reenterPasswordLabel;
-    telephoneLabelEl.textContent = registerData.telephoneLabel;
-    preferredLanguageLabelEl.textContent = registerData.preferredLanguageLabel;
-    registerButton.textContent = registerData.registerButton;
-    advertisementEl.textContent = registerData.advertisement;
 
     const dropdownButton = document.querySelector('.dropdown-toggle');
     dropdownButton.textContent = getLanguageText(currentLanguage);
