@@ -58,7 +58,7 @@ $todo = get_todo_list($db, $userid);
                 <br>
                 <div class="row card-padding">
                     <div class="col">
-                        <a href="#">
+                        <a href="../Quan/DocumentList.php">
                             <div class="card text-center">
                                 <img class="card-img-top" src="" alt="Title">
                                 <div class="card-body">
@@ -116,7 +116,7 @@ $todo = get_todo_list($db, $userid);
                             <div class="col">
                                 <a href="#">
                                     <div class="card text-center">
-                                        <img class="card-img-top" src="" alt="Title">
+                                        <img class="card-img-top" src="hospital.jpg " alt="Title">
                                         <div class="card-body">
                                             <h4 class="card-title">Go to Hospital</h4>
                                             <p class="card-text">Body</p>
