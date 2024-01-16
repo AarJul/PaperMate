@@ -26,17 +26,15 @@ function getLanguageText(lang) {
 // Hàm thiết lập ngôn ngữ
 function setLanguage(lang) {
     localStorage.setItem('selectedLang', lang);
-    displayLanguageContent(lang);
+    updateLanguageContent(lang);
 
     const dropdownButton = document.querySelector('.dropdown-toggle');
     dropdownButton.textContent = getLanguageText(lang);
 }
 
-
 // Update the UI content with the current language
 const updateLanguageContent = () => {
     const loginData = languageData[currentLanguage]['login'];
-    const registerData = languageData[currentLanguage]['register'];
 
     const titleEl = document.querySelector("h1");
     const subtitleEl = document.querySelector(".specific-subtitle");
@@ -57,8 +55,7 @@ const updateLanguageContent = () => {
     rememberPasswordLabel.textContent = loginData.rememberPasswordLabel;
     loginBtn.textContent = loginData.loginButton;
 
-    const dropdownButton = document.querySelector('.dropdown-toggle');
-    dropdownButton.textContent = getLanguageText(currentLanguage);
+
 };
 
 
@@ -67,26 +64,14 @@ const dropdownItems = document.querySelectorAll(".change-lang");
 dropdownItems.forEach((item) => item.addEventListener("click", async (event) => {
     currentLanguage = event.target.dataset.lang;
     if (!languageData[currentLanguage]) {
+        console.log(currentLanguage)
         await loadLanguageData(currentLanguage);
+        setLanguage(currentLanguage);
+        updateLanguageContent(); // Gọi hàm cập nhật nội dung sau khi dữ liệu đã được tải xong
     } else {
         updateLanguageContent();
     }
 }));
-
-
-// Trong sự kiện nhấn vào liên kết "Tại đây" trên trang đăng nhập
-const registerLink = document.querySelector(".new-register");
-registerLink.addEventListener("click", (event) => {
-  event.preventDefault(); // Ngăn chặn hành động mặc định của liên kết
-
-  // Lấy ngôn ngữ hiện tại từ dữ liệu ngôn ngữ đã chọn
-  const currentLanguage = localStorage.getItem("currentLanguage"); // Hàm này trả về ngôn ngữ hiện tại, ví dụ 'vi', 'en', 'jp',...
-
-  
-  // Chuyển hướng đến trang đăng ký với ngôn ngữ tương ứng
-  const registerURL = `../Ivan/newAccount.html?lang=${currentLanguage}`;
-  window.location.href = registerURL; // Chuyển hướng đến trang đăng ký với ngôn ngữ tương ứng
-});
 
 
   
