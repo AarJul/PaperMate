@@ -1,0 +1,14 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3列のグリッドを作成 */
+    grid-gap: 1rem;
+    /* アイテム間の隙間 */
+}
+
+.grid-item {
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    padding: 15px;
+}
