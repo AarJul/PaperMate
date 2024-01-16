@@ -60,22 +60,21 @@ $todo = get_todo_list($db, $userid);
                     <div class="col">
                         <a href="../Quan/DocumentList.php">
                             <div class="card text-center">
-                                <img class="card-img-top" src="" alt="Title">
+                                <img class="card-img-top" src="document.jpg" alt="Title" style="width: 20%; margin: 0 auto;">
                                 <div class="card-body">
                                     <h4 class="card-title">Document List</h4>
-                                    <p class="card-text">Body</p>
                                 </div>
                             </div>
                         </a>
                         <a href="todoinput.php">
                             <div class="card text-center">
-                                <img class="card-img-top" src="" alt="Title">
+                                <img class="card-img-top" src="tofo2.jpg" alt="Title" style="width: 30%; margin: 0 auto;">
                                 <div class="card-body">
                                     <h4 class="card-title">Make new To-Do-List</h4>
-                                    <p class="card-text">Body</p>
                                 </div>
                             </div>
                         </a>
+
                         <!-- to do list table -->
                         <table class="table table-hover table-warning table-borderless ">
                             <thead>
@@ -105,10 +104,9 @@ $todo = get_todo_list($db, $userid);
                             <div class="col">
                                 <a href="#">
                                     <div class="card text-center">
-                                        <img class="card-img-top" src="" alt="Title">
+                                        <img class="card-img-top" src="japan.jpg" alt="Title" style="width: 90%; margin: 0 auto;">
                                         <div class="card-body">
                                             <h4 class="card-title">Just moved to Japan</h4>
-                                            <p class="card-text">Body</p>
                                         </div>
                                     </div>
                                 </a>
@@ -116,10 +114,9 @@ $todo = get_todo_list($db, $userid);
                             <div class="col">
                                 <a href="#">
                                     <div class="card text-center">
-                                        <img class="card-img-top" src="hospital.jpg " alt="Title">
+                                        <img class="card-img-top" src="hospital.jpg " alt="Title" style="width: 70%; margin: 0 auto;">
                                         <div class="card-body">
                                             <h4 class="card-title">Go to Hospital</h4>
-                                            <p class="card-text">Body</p>
                                         </div>
                                     </div>
                                 </a>
@@ -135,7 +132,7 @@ $todo = get_todo_list($db, $userid);
                             </thead>
                             <tbody><?php while($row = $documents->fetch_assoc()): ?>
                               <tr>
-                                <td><a href="StepsList.php?id=<?php echo $row['documentid']; ?>"><?php echo $row['documentname']; ?></a></td>
+                                <td><a href="../quan/StepsList.php?id=<?php echo $row['documentid']; ?>"><?php echo $row['documentname']; ?></a></td>
                                 <td><img src="<?php echo $row['documentpics']; ?>"></td>
                                 <td>john@example.com</td>
                               </tr>
