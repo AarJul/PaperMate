@@ -118,7 +118,7 @@ cb=googleTranslateElementInit">
                     <div class="col">
                         <div class="row g-2">
                             <div class="col">
-                                <a href="#">
+                                <a href="../quan/StepsList.php?id=1">
                                     <div class="card text-center">
                                         <img class="card-img-top" src="japan.jpg" alt="Title" style="width: 90%; margin: 0 auto;">
                                         <div class="card-body">
@@ -128,7 +128,7 @@ cb=googleTranslateElementInit">
                                 </a>
                             </div>
                             <div class="col">
-                                <a href="#">
+                                <a href="../quan/StepsList.php?id=1">
                                     <div class="card text-center">
                                         <img class="card-img-top" src="hospital.jpg " alt="Title" style="width: 70%; margin: 0 auto;">
                                         <div class="card-body">
