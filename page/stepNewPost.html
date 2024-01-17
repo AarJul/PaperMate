@@ -27,7 +27,19 @@
     <div class="container-fluid">
         <!-- main -->
         <div class="main">
-
+            <div id="stepPage">
+                <div class="row">
+                    <div class="bg-secondary text-black rounded d-flex">
+                        <div class="col-sm-8">
+                            <h1 id="stepsname">Step Title Here</h1>
+                            <p id="stepDetail">step detail here</p>
+                        </div>
+                        <div class="col-sm-4">
+                            <img src="cinqueterre.jpg" class="img-thumbnail" alt="Cinque Terre">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <br>
         <!-- footer -->
@@ -69,10 +81,10 @@
                 };
             },
             mounted() {
-                axios.get('php/allSteps.php') // Adjust the path here
-                  .then(response => (this.data = response.data))
-                  .catch(error => console.error(error));
-              }              
+                axios.get('/api/data')
+                    .then(response => (this.data = response.data))
+                    .catch(error => console.error(error));
+            }
         };
     </script>
 </body>
