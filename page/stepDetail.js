@@ -1,41 +1,43 @@
-const stepsItem = {
+const stepDetail = {
     setup() {
-        const docSteps = Vue.ref([]);
-        const documentid = localStorage.getItem("documentid");
-        console.log("documentid:", documentid);
+        const StepsPost = Vue.ref([]);
+        const stepsid = localStorage.getItem("stepsid");
+        console.log("stepsid:", stepsid);
+
+        const params = new URLSearchParams();
+        params.append('stepsid', stepsid);
 
         Vue.onMounted(async () => {
             try {
-                // Send a POST request to the PHP script with documentid
-                const response = await axios.post('http://localhost:80/PaperMate-1/page/php/getAllSteps_json.php', {
-                    documentid: documentid
-                });
+                // Send a POST request to the PHP script with stepsid
+                const response = await axios.post('http://localhost:80/PaperMate-1/page/php/getAllStepsPost_json.php', params);
+                console.log("Sending request with stepsid:", stepsid);
+                console.log("Response:", response);
 
-                // Use response.data.steps instead of response.data.docSteps
-                docSteps.value = response.data.steps;
-                console.log(docSteps.value);
+                // Use response.data.posts instead of response.data.steps
+                StepsPost.value = response.data.posts;
+                console.log(StepsPost.value);
             } catch (error) {
                 console.error(error);
             }
         });
 
         const handlePageChange = (id) => {
-            localStorage.setItem("stepsid", id);
-            window.location.href = "/page/stepDetail.html";
+            localStorage.setItem("postid", id);
+            window.location.href = "/page/stepPostDetail.html";
         };
 
         return {
-            docSteps,
+            StepsPost,
             handlePageChange,
         };
     },
     template: `
         <div class="grid-container">
-            <div v-for="steps in docSteps" :key="steps.stepsid" class="grid-item">
-                <h3>{{ steps.stepsname }}</h3>
-                <img v-if="steps.stepspic !== null" :src="steps.stepspic" :alt="steps.stepsname" class="img-fluid mb-3">
-                <p class="mt-auto mb-auto ms-3">{{ steps.stepsname }}</p>
-                <button @click="handlePageChange(steps.stepsid)">Details and Posts</button>
+            <div v-for="post in StepsPost" :key="post.postid" class="grid-item">
+                <h3>{{ post.postname }}</h3>
+                <!-- Update the rest of your template accordingly -->
+                <button @click="handlePageChange(post.postid)">Details and Posts</button>
             </div>
         </div>
     `,
@@ -47,5 +49,5 @@ const app = Vue.createApp({
     },
 });
 
-app.component('steps-item', stepsItem);
+app.component('stepPost-item', stepDetail);
 app.mount('#app');
