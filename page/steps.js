@@ -1,8 +1,9 @@
 const stepsItem = {
     setup() {
         const docSteps = Vue.ref([]);
+
+        // Fetch documentid from localStorage
         const documentid = localStorage.getItem("documentid");
-        console.log("documentid:", documentid);
 
         Vue.onMounted(async () => {
             try {
@@ -10,6 +11,7 @@ const stepsItem = {
                 const response = await axios.post('http://localhost:80/PaperMate-1/page/php/getAllSteps_json.php', {
                     documentid: documentid
                 });
+                console.log("Sending request with documentid:", documentid);
 
                 // Use response.data.steps instead of response.data.docSteps
                 docSteps.value = response.data.steps;
@@ -27,6 +29,7 @@ const stepsItem = {
         return {
             docSteps,
             handlePageChange,
+            documentid, // Expose documentid to the template
         };
     },
     template: `
