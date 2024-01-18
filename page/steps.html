@@ -58,23 +58,18 @@
             </div>
         </div>
     </nav>
-    <!-- vue.js -->
-    <script>
-        import axios from 'axios';
 
-        export default {
-            data() {
-                return {
-                    data: null,
-                };
-            },
-            mounted() {
-                axios.get('php/allSteps.php') // Adjust the path here
-                  .then(response => (this.data = response.data))
-                  .catch(error => console.error(error));
-              }              
-        };
-    </script>
+    <!-- Import Vue.js -->
+    <script src="https://unpkg.com/vue@3.0.11/dist/vue.global.js"></script>
+
+    <!-- Import Vue Router -->
+    <script src="https://cdn.jsdelivr.net/npm/vue-router@4.0.10"></script>
+
+    <!-- Import Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <!-- Your allDoc.js script comes after this -->
+    <script src="allDoc.js" type="module"></script>
 </body>
 
 </html>
