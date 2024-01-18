@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -14,45 +15,49 @@
 </head>
 
 <body>
-    <div id="app">
+    <div>
         <ul class="navbar navbar-expand-sm bg-dark navbar-dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">PaperMate</a>
             </div>
         </ul>
-    </div>
 
-    <div class="container-fluid">
-        <!-- main -->
-        <div class="main">
-            <div class="container mt-5">
-                <h1 class="text-center mb-5">All Documents</h1>
-                <div class="row grid-container" id="app"> <!-- Added 'id="app"' -->
-                    <!-- Vue.js will populate this section -->
+        <div class="container-fluid">
+            <!-- main -->
+            <div class="main">
+                <div class="container mt-5">
+                    <h1 class="text-center mb-5">All Documents</h1>
+                    <div class="row grid-container" id="app">
+                        <!-- Vue.js will populate this section -->
+                        <document-item></document-item>
+                    </div>
                 </div>
+                <!-- Latest Post -->
+                <!-- <table class="table table-hover table-warning table-borderless"> -->
+                <!-- ... Your Latest Post table ... -->
+                <!-- </table> -->
             </div>
-            <!-- Latest Post -->
-            <!-- <table class="table table-hover table-warning table-borderless"> -->
-            <!-- ... Your Latest Post table ... -->
-            <!-- </table> -->
+            <br>
+            <!-- footer -->
+            <div class="mt-4 p-5 bg-secondary p-3 text-white rounded">
+                <h1>広告</h1>
+            </div>
         </div>
-        <br>
-        <!-- footer -->
-        <div class="mt-4 p-5 bg-secondary p-3 text-white rounded">
-            <h1>広告</h1>
-        </div>
-    </div>
 
-    <!-- bottom navbar -->
-    <nav class="navbar navbar-expand-md navbar-dark fixed-bottom bg-danger">
-        <!-- ... Your bottom navbar ... -->
-    </nav>
+        <!-- bottom navbar -->
+        <nav class="navbar navbar-expand-md navbar-dark fixed-bottom bg-danger">
+            <!-- ... Your bottom navbar ... -->
+        </nav>
+    </div>
 
     <!-- Import Vue.js -->
     <script src="https://unpkg.com/vue@3.0.11/dist/vue.global.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/vue-router@4.0.10"></script>
+
     <!-- Import Axios -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    
     <!-- Your allDoc.js script comes after this -->
     <script src="allDoc.js" type="module"></script>
 
