@@ -9,15 +9,19 @@
     "loginButton": "Masuk"
   },
   "register": {
-    "title": "Daftar Akun Baru",
-    "usernameLabel": "Nama Pengguna:",
-    "emailLabel": "Email:",
-    "passwordLabel": "Kata Sandi:",
-    "reenterPasswordLabel": "Masukkan Kata Sandi Kembali:",
-    "telephoneLabel": "Telepon:",
-    "preferredLanguageLabel": "Bahasa Pilihan",
-    "registerButton": "DAFTAR",
-    "advertisement": "Iklan"
+    "RegisterNewAccount": "Daftar Akun Baru",
+    "Username": "Nama Pengguna:",
+    "Email": "Email:",
+    "Password": "Kata Sandi:",
+    "ReenterPassword": "Masukkan Ulang Kata Sandi:",
+    "Telephone": "Telepon:",
+    "PreferredLanguage": "Bahasa Pilihan",
+    "REGISTER": "DAFTAR",
+    "UsernamePlaceholder": "Masukkan Nama Pengguna",
+    "EmailPlaceholder": "Masukkan Email",
+    "PasswordPlaceholder": "Masukkan Kata Sandi",
+    "ReenterPasswordPlaceholder": "Masukkan Ulang Kata Sandi",
+    "TelePlaceholder": "Masukkan Nomor Telefon"
   }
 }
       

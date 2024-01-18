@@ -9,14 +9,18 @@
       "loginButton": "Login"
   },
   "register": {
-      "title": "Register New Account",
-      "usernameLabel": "Username:",
-      "emailLabel": "Email:",
-      "passwordLabel": "Password:",
-      "reenterPasswordLabel": "Re-enter Password:",
-      "telephoneLabel": "Telephone:",
-      "preferredLanguageLabel": "Preferred language",
-      "registerButton": "REGISTER",
-      "advertisement": "Advertisement"
+    "RegisterNewAccount": "Register New Account",
+    "Username": "Username:",
+    "Email": "Email:",
+    "Password": "Password:",
+    "ReenterPassword": "Re-enter Password:",
+    "Telephone": "Telephone:",
+    "PreferredLanguage": "Preferred language",
+    "REGISTER": "REGISTER",
+    "UsernamePlaceholder": "Enter Username",
+    "EmailPlaceholder": "Enter Email",
+    "PasswordPlaceholder": "Enter Password",
+    "ReenterPasswordPlaceholder": "Re-enter Password",
+    "TelePlaceholder": "Enter Telephone"
   }
 }
