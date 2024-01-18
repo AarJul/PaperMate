@@ -4,14 +4,19 @@ const stepsItem = {
 
         // Fetch documentid from localStorage
         const documentid = localStorage.getItem("documentid");
+        const params = new URLSearchParams();
+        params.append('documentid', documentid);
+
 
         Vue.onMounted(async () => {
             try {
                 // Send a POST request to the PHP script with documentid
-                const response = await axios.post('http://localhost:80/PaperMate-1/page/php/getAllSteps_json.php', {
-                    documentid: documentid
-                });
+                // const response = await axios.post('http://localhost:80/PaperMate-1/page/php/getAllSteps_json.php', {
+                //     documentid: 1,
+                // });
+                const response = await axios.post('http://localhost:80/PaperMate-1/page/php/getAllSteps_json.php', params);
                 console.log("Sending request with documentid:", documentid);
+                console.log("Response:", response);
 
                 // Use response.data.steps instead of response.data.docSteps
                 docSteps.value = response.data.steps;
