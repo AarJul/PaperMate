@@ -31,6 +31,13 @@ function setLanguage(lang) {
     const dropdownButton = document.querySelector('.dropdown-toggle');
     dropdownButton.textContent = getLanguageText(lang);
 }
+function autoSwitchLanguage() {
+    const supportedLanguages = ['en', 'vi', 'jp', 'indo']; 
+    const currentIndex = supportedLanguages.indexOf(currentLanguage);
+    const nextLanguage = supportedLanguages[(currentIndex + 1) % supportedLanguages.length];
+    setLanguage(nextLanguage);
+}
+
 
 // Update the UI content with the current language
 const updateLanguageContent = () => {
@@ -38,16 +45,16 @@ const updateLanguageContent = () => {
 
     const title = document.querySelector("h2");
     const username = document.querySelector(".username");
-    const email = document.querySelector("#email");
-    const password = document.querySelector("#password1"); 
-    const rePassword = document.querySelector("#rePassword"); 
-    const telephone = document.querySelector("#tel");
-    const preferredLanguage = document.querySelector("#languageLabel"); 
-    const usernamePlaceholder = document.querySelector("input[placeholder='Enter Username']");
-    const emailPlaceholder = document.querySelector("input[placeholder='Enter email']");
-    const passwordPlaceholder = document.querySelector("input[placeholder='Enter password']");
-    const rePasswordPlaceholder = document.querySelector("input[placeholder='Re-Enter password']");
-    const telephonePlaceholder = document.querySelector("input[placeholder='Enter Telephone']");
+    const email = document.querySelector(".email");
+    const password = document.querySelector(".password"); 
+    const rePassword = document.querySelector(".rePassword"); 
+    const telephone = document.querySelector(".telephone");
+    const preferredLanguage = document.querySelector(".PreferredLang"); 
+    const usernamePlaceholder = document.querySelector(".username-input");
+    const emailPlaceholder = document.querySelector(".email-input");
+    const passwordPlaceholder = document.querySelector(".password-input");
+    const rePasswordPlaceholder = document.querySelector(".rePassword-input");
+    const telephonePlaceholder = document.querySelector(".telephone-input");
     const registerButton = document.querySelector("button[name='register']"); 
 
 
@@ -70,17 +77,20 @@ const updateLanguageContent = () => {
 
 // Attach event listener to dropdown menu items
 const dropdownItems = document.querySelectorAll(".change-lang");
+// Attach event listener to dropdown menu items
 dropdownItems.forEach((item) => item.addEventListener("click", async (event) => {
     currentLanguage = event.target.dataset.lang;
     if (!languageData[currentLanguage]) {
-        console.log(currentLanguage)
         await loadLanguageData(currentLanguage);
         setLanguage(currentLanguage);
-        updateLanguageContent(); // Gọi hàm cập nhật nội dung sau khi dữ liệu đã được tải xong
+        updateLanguageContent();
+        autoSwitchLanguage();
     } else {
         updateLanguageContent();
+        autoSwitchLanguage();
     }
 }));
+
 
 
   
