@@ -5,11 +5,9 @@
     $_SESSION['document_id'] = null;
     $_SESSION['step_id'] = null;
     $db = connect_db();
-    
-    // Echo a message to the console
-    echo "PHP script executed successfully.";
+    $documents = get_documents_list($db);
 
-    // Fetch and echo the documents data
+    // Chuyển kết quả thành JSON và in ra màn hình
     header('Content-Type: application/json');
     echo get_documents_list_json($db);
 ?>
