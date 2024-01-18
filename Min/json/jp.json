@@ -9,15 +9,19 @@
     "loginButton": "ログイン"
   },
   "register": {
-    "title": "新しいアカウントを登録する",
-    "usernameLabel": "ユーザー名：",
-    "emailLabel": "Eメール：",
-    "passwordLabel": "パスワード：",
-    "reenterPasswordLabel": "パスワードを再入力してください：",
-    "telephoneLabel": "電話番号：",
-    "preferredLanguageLabel": "優先言語",
-    "registerButton": "登録する",
-    "advertisement": "広告"
+    "RegisterNewAccount": "アカウント登録",
+    "Username": "ユーザー名：",
+    "Email": "メールアドレス：",
+    "Password": "パスワード：",
+    "ReenterPassword": "パスワード再入力：",
+    "Telephone": "電話番号：",
+    "PreferredLanguage": "言語設定",
+    "REGISTER": "登録",
+    "UsernamePlaceholder": "ユーザー名を入力してください",
+    "EmailPlaceholder": "メールアドレスを入力してください",
+    "PasswordPlaceholder": "パスワードを入力してください",
+    "ReenterPasswordPlaceholder": "パスワードを再入力してください",
+    "TelePlaceholder": "電話番号を入力してください"
   }
 }
     

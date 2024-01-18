@@ -49,44 +49,42 @@ cb=googleTranslateElementInit">
                             <div class="dropdown text-end">
                                 <button type="button" class="btn btn-primary btn-lg btn-danger dropdown-toggle"
                                     data-bs-toggle="dropdown">
-                                    language
+                                    <span id="selectedLanguage">Select Language</span>
                                 </button>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">English</a></li>
-                                    <li><a class="dropdown-item" href="#">Vietnam</a></li>
-                                    <li><a class="dropdown-item" href="#">Chinese</a></li>
+                                    <li><a class="dropdown-item change-lang" data-lang="en">English</a></li>
+                                    <li><a class="dropdown-item change-lang" data-lang="vi">Tiếng Việt</a></li>
+                                    <li><a class="dropdown-item change-lang" data-lang="jp">日本語</a></li>
+                                    <li><a class="dropdown-item change-lang" data-lang="indo">Indonesia</a></li>
                                 </ul>
                             </div>
+                            
                             <h2>Register New Account</h2>
                             <br>
                             <div class="mb-3 mt-3">
-                                <label for="Username" class="username">Username:</label>
-                                <input type="text" class="form-control" id="name" placeholder="Enter Username"
-                                    name="name">
+                                <label for="name" class="username">Username:</label>
+                                <input type="text" class="form-control" id="name" placeholder="Enter Username" name="name">
                             </div>
                             <div class="mb-3 mt-3">
                                 <label for="email" class="email">Email:</label>
-                                <input type="email" class="form-control" id="email" placeholder="Enter email"
-                                    name="email">
+                                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
                             </div>
                             <div class="mb-3">
-                                <label for="pwd" class="password">Password:</label>
-                                <input type="password" class="form-control" id="pwd" placeholder="Enter password"
-                                    name="pwd">
+                                <label for="password1" class="password">Password:</label>
+                                <input type="password" class="form-control" id="password1" placeholder="Enter password" name="password">
                             </div>
                             <div class="mb-3">
-                                <label for="pwd" class="rePassword">Re-enter Password:</label>
-                                <input type="password" class="form-control" id="pwd2" placeholder="Enter password"
-                                    name="pwd">
+                                <label for="password2" class="rePassword">Re-enter Password:</label>
+                                <input type="password" class="form-control" id="password2" placeholder="Re-Enter password" name="password2">
                             </div>
                             <div class="mb-3">
-                                <label for="pwd" class="telephone">Telephone:</label>
-                                <input type="tel" class="form-control" id="tel" placeholder="Enter Telephone"
-                                    name="tel">
+                                <label for="tel" class="telephone">Telephone:</label>
+                                <input type="tel" class="form-control" id="tel" placeholder="Enter Telephone" name="tel">
                             </div>
+                            
                             <div class="row justify-content-center align-items-center g-2">
                                 <div class="col">
-                                    <label for="language" class="PreferredLang" id ="language" name = "language">Preferred language</label>
+                                    <label for="languageLabel" class="PreferredLang" id ="languageLabel" name = "language">Preferred language</label>
                                     <select class="form-select" id="language" name="language">
                                         <option value="English">English</option>
                                         <option value="Vietnam">Vietnam</option>
@@ -112,7 +110,7 @@ cb=googleTranslateElementInit">
 
 
     <script src="newAccount.js"></script>
-    <script src="../Min/lang.js"></script>
+    <script src="../Min/lang_regis.js"></script>
 </body>
 
 </html>

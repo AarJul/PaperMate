@@ -9,15 +9,19 @@
     "loginButton": "Đăng nhập"
   },
   "register": {
-    "title": "Đăng ký tài khoản mới",
-    "usernameLabel": "Tên người dùng:",
-    "emailLabel": "Email:",
-    "passwordLabel": "Mật khẩu:",
-    "reenterPasswordLabel": "Nhập lại mật khẩu:",
-    "telephoneLabel": "Số điện thoại:",
-    "preferredLanguageLabel": "Ngôn ngữ ưu tiên",
-    "registerButton": "ĐĂNG KÝ",
-    "advertisement": "Quảng cáo"
+    "RegisterNewAccount": "Đăng ký tài khoản mới",
+    "Username": "Tên người dùng:",
+    "Email": "Email:",
+    "Password": "Mật khẩu:",
+    "ReenterPassword": "Nhập lại mật khẩu:",
+    "Telephone": "Số điện thoại:",
+    "PreferredLanguage": "Ngôn ngữ chính",
+    "REGISTER": "ĐĂNG KÝ",
+    "UsernamePlaceholder": "Nhập tên người dùng",
+    "EmailPlaceholder": "Nhập email",
+    "PasswordPlaceholder": "Nhập mật khẩu",
+    "ReenterPasswordPlaceholder": "Nhập lại mật khẩu",
+    "TelePlaceholder": "Nhập số điện thoại"
   }
 }
   
