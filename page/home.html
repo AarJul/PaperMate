@@ -17,119 +17,125 @@
 
 <body>
     <div id="app">
-            <ul class="navbar navbar-expand-sm bg-dark navbar-dark">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#">PaperMate</a>
-                </div>
-            </ul>
-        </div>
- 
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
         <div class="container-fluid">
-            <!-- main -->
-            <div class="main">
-                <h1 class="text-center">Welcome,　　　</h1>
-                <h2 class="text-center">{{user}} さん</h2>
-                <h2 class="th7 text-center">What do you want to do today?</h2>
-                <br>
-                <div class="row card-padding">
-                    <div class="col">
-                        <a href="#">
-                            <div class="card text-center">
-                                <img class="card-img-top" src="" alt="Title">
-                                <div class="card-body">
-                                    <h4 class="card-title">Document List</h4>
-                                    <p class="card-text">Body</p>
-                                </div>
+            <a class="navbar-brand" href="allDoc.html">PaperMate</a>
+            <ul class="nav justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link" href="landing.html">LogOut</a>
+            </ul>
+
+        </div>
+
+    </nav>
+    </div>
+
+    <div class="container-fluid">
+        <!-- main -->
+        <div class="main">
+            <h1 class="text-center">Welcome,　　　</h1>
+            <h2 class="text-center">{{user}} さん</h2>
+            <h2 class="th7 text-center">What do you want to do today?</h2>
+            <br>
+            <div class="row card-padding">
+                <div class="col">
+                    <a href="allDoc.html">
+                        <div class="card text-center">
+                            <img class="card-img-top" src="" alt="Title">
+                            <div class="card-body">
+                                <h4 class="card-title">Document List</h4>
+                                <p class="card-text">Body</p>
                             </div>
-                        </a>
-                        <a href="#">
-                            <div class="card text-center">
-                                <img class="card-img-top" src="" alt="Title">
-                                <div class="card-body">
-                                    <h4 class="card-title">Make new To-Do-List</h4>
-                                    <p class="card-text">Body</p>
-                                </div>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="card text-center" data-bs-toggle="modal" data-bs-target="#myModal">
+                            <img class="card-img-top" src="" alt="Title">
+                            <div class="card-body">
+                                <h4 class="card-title">Make new To-Do-List</h4>
+                                <p class="card-text">Body</p>
                             </div>
-                        </a>
-                        <!-- to do list table -->
-                        <table class="table table-hover table-warning table-borderless ">
-                            <thead>
-                              <tr>
+                        </div>
+                    </a>
+                    <!-- to do list table -->
+                    <table class="table table-hover table-warning table-borderless ">
+                        <thead>
+                            <tr>
                                 <th class="" colspan="3">
                                     <h2>Your TO DO LIST</h2>
                                 </th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
                                 <td>John</td>
                                 <td>Doe</td>
                                 <td>john@example.com</td>
-                              </tr>
-                              <tr>
+                            </tr>
+                            <tr>
                                 <td>Mary</td>
                                 <td>Moe</td>
                                 <td>mary@example.com</td>
-                              </tr>
-                              <tr>
+                            </tr>
+                            <tr>
                                 <td>July</td>
                                 <td>Dooley</td>
                                 <td>july@example.com</td>
-                              </tr>
-                            </tbody>
-                          </table>
-                    </div>
-                    <div class="col">
-                        <div class="row g-2">
-                            <div class="col">
-                                <a href="#">
-                                    <div class="card text-center">
-                                        <img class="card-img-top" src="" alt="Title">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Just moved to Japan</h4>
-                                            <p class="card-text">Body</p>
-                                        </div>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col">
+                    <div class="row g-2">
+                        <div class="col">
+                            <a href="http://127.0.0.1:5500/page/steps.html">
+                                <div class="card text-center">
+                                    <img class="card-img-top" src="" alt="Title">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Just moved to Japan</h4>
+                                        <p class="card-text">Body</p>
                                     </div>
-                                </a>
-                            </div>
-                            <div class="col">
-                                <a href="#">
-                                    <div class="card text-center">
-                                        <img class="card-img-top" src="" alt="Title">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Go to Hospital</h4>
-                                            <p class="card-text">Body</p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
+                                </div>
+                            </a>
                         </div>
-                        <table class="table table-hover table-warning table-borderless ">
-                            <thead>
-                              <tr>
+                        <div class="col">
+                            <a href="http://127.0.0.1:5500/page/steps.html">
+                                <div class="card text-center">
+                                    <img class="card-img-top" src="" alt="Title">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Go to Hospital</h4>
+                                        <p class="card-text">Body</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <table class="table table-hover table-warning table-borderless ">
+                        <thead>
+                            <tr>
                                 <th class="" colspan="3">
                                     <h2>Latest Post</h2>
                                 </th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
                                 <td>John</td>
                                 <td>Doe</td>
                                 <td>john@example.com</td>
-                              </tr>
-                              <tr>
+                            </tr>
+                            <tr>
                                 <td>Mary</td>
                                 <td>Moe</td>
                                 <td>mary@example.com</td>
-                              </tr>
-                              <tr>
+                            </tr>
+                            <tr>
                                 <td>July</td>
                                 <td>Dooley</td>
                                 <td>july@example.com</td>
-                              </tr>
-                              <!-- see more button -->
-                              <tr>
+                            </tr>
+                            <!-- see more button -->
+                            <tr>
                                 <td></td>
                                 <td></td>
                                 <td>
@@ -137,18 +143,53 @@
 
                                     </button>
                                 </td>
-                              </tr>
-                            </tbody>
-                          </table>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- The Modal -->
+            <div class="modal fade" id="myModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Add a new To Do List</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <form action="../Ivan/todoinput.php">
+                                <div class="mb-3 mt-3">
+                                  <label for="email">What you want to do?</label>
+                                  <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="dateInput">Select a Date:</label>
+                                    <input type="date" class="form-control" id="dateInput" name="dateInput">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                              </form>
+                        </div>
+
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                        </div>
+
                     </div>
                 </div>
             </div>
-            <br>
-            <!-- footer -->
-            <div class="mt-4 p-5 bg-secondary p-3 text-white rounded">
-                <h1>広告</h1>
-            </div>
         </div>
+        <br>
+        <!-- footer -->
+        <div class="mt-4 p-5 bg-secondary p-3 text-white rounded">
+            <h1>広告</h1>
+        </div>
+    </div>
     </div>
     <!-- bottom navbar -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-bottom bg-danger">
@@ -159,7 +200,7 @@
                         <div class="dropup">
                             <button type="button" class="btn btn-danger btn-lg dropdown-toggle"
                                 data-bs-toggle="dropdown">
-                                Languange
+                                Language
                             </button>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">English</a></li>
