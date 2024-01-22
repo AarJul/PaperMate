@@ -26,8 +26,9 @@ const stepsItem = {
             }
         });
 
-        const handlePageChange = (id) => {
+        const handlePageChange = (id, stepName) => {
             localStorage.setItem("stepsid", id);
+            localStorage.setItem("stepName", stepName);
             window.location.href = "/page/stepDetail.html";
         };
 
@@ -43,7 +44,7 @@ const stepsItem = {
                 <h3>{{ steps.stepsname }}</h3>
                 <img v-if="steps.stepspic !== null" :src="steps.stepspic" :alt="steps.stepsname" class="img-fluid mb-3">
                 <p class="mt-auto mb-auto ms-3">{{ steps.stepsname }}</p>
-                <button @click="handlePageChange(steps.stepsid)">Details and Posts</button>
+                <button @click="handlePageChange(steps.stepsid, steps.stepsname)">Details and Posts</button>
             </div>
         </div>
     `,

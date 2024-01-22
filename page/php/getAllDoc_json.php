@@ -6,7 +6,7 @@
     $_SESSION['step_id'] = null;
 
     // Allow requests from any origin (you may want to restrict this in a production environment)
-    header('Access-Control-Allow-Origin: 127.0.0.1:5500');
+    header('Access-Control-Allow-Origin: http://127.0.0.1:5500');
 
     // Allow the following HTTP methods
     header('Access-Control-Allow-Methods: GET, POST, OPTIONS');

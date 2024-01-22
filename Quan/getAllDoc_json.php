@@ -6,7 +6,7 @@ $_SESSION['document_id'] = null;
 $_SESSION['step_id'] = null;
 
 // Allow requests only from http://127.0.0.1:5500
-header('Access-Control-Allow-Origin: http://127.0.0.1:5500');
+header("Access-Control-Allow-Origin: http://127.0.0.1:5500");
 
 // Allow the following HTTP methods
 header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
