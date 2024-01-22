@@ -24,7 +24,7 @@
 
     </nav>
 
-    <div class="container-fluid" id="app">
+    <div class="container-fluid">
         <!-- main -->
         <div class="main">
             <div id="stepPage">
@@ -43,44 +43,9 @@
             <br>
 
             <div class="d-flex flex-row-reverse bd-highlight">
-                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#newPost">New
-                    Post</button>
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#newPost">New Post</button>
 
-                <!-- The Modal -->
-                <div class="modal fade" id="newPost">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-
-                            <!-- Modal Header -->
-                            <div class="modal-header">
-                                <h4 class="modal-title">Add a new To Do List</h4>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                            </div>
-
-                            <!-- Modal body -->
-                            <div class="modal-body">
-                                <form action="../Ivan/newPost.php">
-                                    <div class="mb-3 mt-3">
-                                        <label for="email">What you want to do?</label>
-                                        <input type="email" class="form-control" id="email" placeholder="Enter email"
-                                            name="email">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="dateInput">Select a Date:</label>
-                                        <input type="date" class="form-control" id="dateInput" name="dateInput">
-                                    </div>
-                                    <button type="submit" class="btn btn-primary">Submit</button>
-                                </form>
-                            </div>
-
-                            <!-- Modal footer -->
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
+                
             </div>
             <div id="post">
                 <table class="table table-hover table-warning table-borderless ">
@@ -107,6 +72,41 @@
         </div>
         <br>
         <!-- footer -->
+        <!-- The Modal -->
+        <div class="modal fade" id="newPost">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Add a new To Do List</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <form action="../Ivan/newPost.php">
+                            <div class="mb-3 mt-3">
+                                <label for="email">What you want to do?</label>
+                                <input type="email" class="form-control" id="email" placeholder="Enter email"
+                                    name="email">
+                            </div>
+                            <div class="mb-3">
+                                <label for="dateInput">Select a Date:</label>
+                                <input type="date" class="form-control" id="dateInput" name="dateInput">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
     </div>
     </div>
     <!-- bottom navbar -->
@@ -118,7 +118,7 @@
                         <div class="dropup">
                             <button type="button" class="btn btn-danger btn-lg dropdown-toggle"
                                 data-bs-toggle="dropdown">
-                                Languange
+                                Language
                             </button>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">English</a></li>

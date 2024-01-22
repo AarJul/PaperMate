@@ -174,7 +174,7 @@ cb=googleTranslateElementInit">
                         <div class="dropup">
                             <button type="button" class="btn btn-danger btn-lg dropdown-toggle"
                                 data-bs-toggle="dropdown">
-                                Languange
+                                Language
                             </button>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">English</a></li>
