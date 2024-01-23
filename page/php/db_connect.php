@@ -4,7 +4,7 @@ function connect_db() {
 
   $servername = "localhost";
   $username = "root"; 
-  $password = "";
+  $password = "root";
   $dbname = "papermate";
 
   $conn = new mysqli($servername, $username, $password, $dbname);

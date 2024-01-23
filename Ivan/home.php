@@ -81,7 +81,7 @@ cb=googleTranslateElementInit">
                 <br>
                 <div class="row card-padding">
                     <div class="col">
-                        <a href="../Quan/DocumentList.php">
+                        <a href="../page/allDoc.html">
                             <div class="card text-center">
                                 <img class="card-img-top" src="document.jpg" alt="Title" style="width: 20%; margin: 0 auto;">
                                 <div class="card-body">
@@ -157,7 +157,6 @@ cb=googleTranslateElementInit">
                               <tr>
                                 <td><a href="../quan/StepsList.php?id=<?php echo $row['documentid']; ?>"><?php echo $row['documentname']; ?></a></td>
                                 <td><img src="<?php echo $row['documentpics']; ?>"></td>
-                                <td>john@example.com</td>
                               </tr>
                               
                             </tbody><?php endwhile; ?>
