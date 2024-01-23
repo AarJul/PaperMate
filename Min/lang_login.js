@@ -1,7 +1,7 @@
 const languageData = {};
 const loadLanguageData = async (lang) => {
     try {
-      const response = await fetch(`json/${lang}.json`);
+      const response = await fetch(`../Min/json/${lang}.json`);
       const data = await response.json();
       languageData[lang] = data;
     } catch (error) {
@@ -36,7 +36,7 @@ function setLanguage(lang) {
 const updateLanguageContent = () => {
     const loginData = languageData[currentLanguage]['login'];
 
-    const titleEl = document.querySelector("h1");
+    const titleEl = document.querySelector("h2");
     const subtitleEl = document.querySelector(".specific-subtitle");
     const registerLink = document.querySelector(".new-register");
     const emailInput = document.querySelector("input[name='email']");

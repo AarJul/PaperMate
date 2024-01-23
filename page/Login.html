@@ -26,36 +26,67 @@
         <div class="container-fluid">
             <!-- main -->
             <div class="main">
-                <form action="../Ivan/Register.php" method="post">
+                <form action="../Min/login.php" method="post">
                     <div class="row justify-content-center align-items-center">
                         <div class="col-1"></div>
                         <div class="col-6">
                             <div class="dropdown text-end">
-                                <button type="button" class="btn btn-primary btn-lg btn-danger dropdown-toggle"
+                                <button type="button" class="btn btn-primary btn-lg btn-danger dropdown-toggle" id="dropdownMenuButton"
                                     data-bs-toggle="dropdown">
-                                    Language
+                                    <span id="selectedLanguage">Language</span>
                                 </button>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">English</a></li>
-                                    <li><a class="dropdown-item" href="#">Vietnam</a></li>
-                                    <li><a class="dropdown-item" href="#">Chinese</a></li>
+                                    <li><a class="dropdown-item change-lang" data-lang="en">English</a></li>
+                                    <li><a class="dropdown-item change-lang" data-lang="vi">Tiếng Việt</a></li>
+                                    <li><a class="dropdown-item change-lang" data-lang="jp">日本語</a></li>
+                                    <li><a class="dropdown-item change-lang" data-lang="indo">Indonesia</a></li>
                                 </ul>
                             </div>
                             <h2 class="text-center">Login</h2>
                             <br>
-                            <div class="mb-3 mt-3">
-                                <label for="Username" class="form-label">Username:</label>
-                                <input type="text" class="form-control" id="name" placeholder="Enter Username"
-                                    name="name">
-                            </div>
-                            <div class="mb-3">
-                                <label for="pwd" class="form-label">Password:</label>
-                                <input type="password" class="form-control" id="pwd" placeholder="Enter password"
-                                    name="pwd">
-                            </div>
-                            <br>
-                            <button type="submit" class="align-items-center btn btn-primary btn-lg btn-danger ">Login</button>
+                        
+                              <form action="login.php" method="POST">
+                                <div class="mb-3 mt-3">
+                                    <label for="email" class="form-label">Email:</label>
+                                    <input name="email" class="form-control" id="email" type="text" placeholder="Enter your email" />
+                                    
+                                </div>
+                                <div class="mb-3">
+                                    <label for="password" class="form-label">Password:</label>
+                                    <input name="password" class="form-control" id="password" type="password" placeholder="Enter your password" />
+                                </div>
+                                <div class="text-center">
+                                  <input type="checkbox" name="pass_save" value="true" />
+                                  <label for="pass_save">Remember password</label>
+                                </div>
+                                <div class="text-center">
+                                  <button class="btn btn-primary btn-lg mx-auto" type="submit" name="login">Login</button>
+                                </div>
+                              </form>
+                              <br />
+                              <br>
+                              <h6 class="text-center">
+                                <span class="specific-subtitle">If you don't have an account,</span>
+                                <span class="new-register-block">
+                                  <a href="../Ivan/newAccount.html" class="new-register" data-lang-link="../Ivan/newAccount.html">Register here</a>
+                                </span>
+                              </h6>
+                            <br />
+        
+                                <!-- <div class="mb-3 mt-3">
+                                    <label for="email" class="form-label">Email:</label>
+                                    <input type="text" class="form-control" id="email" placeholder="Enter Email"
+                                        name="email">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="password" class="form-label">Password:</label>
+                                    <input type="password" class="form-control" id="password" placeholder="Enter password"
+                                        name="password">
+                                </div>
+                                <br>
+                                <button type="submit" class="align-items-center btn btn-primary btn-lg btn-danger ">Login</button> -->
                         </div>
+                    
                         <div class="col-1"></div>
                     </div>
             </div>
@@ -71,6 +102,7 @@
 
 
     <script src="newAccount.js"></script>
+    <script src="../Min/lang_login.js"></script>
 </body>
 
 </html>
