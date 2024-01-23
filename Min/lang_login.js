@@ -55,6 +55,7 @@ const updateLanguageContent = () => {
     rememberPasswordLabel.textContent = loginData.rememberPasswordLabel;
     loginBtn.textContent = loginData.loginButton;
 
+    
 
 };
 

@@ -14,21 +14,28 @@
 </head>
 
 <body>
-    <div id="app">
-        <ul class="navbar navbar-expand-sm bg-dark navbar-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">PaperMate</a>
-            </div>
-        </ul>
-    </div>
+    <div>
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="allDoc.html">PaperMate</a>
+            <ul class="nav justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link" href="landing.html">LogOut</a>
+            </ul>
 
-    <div class="container-fluid">
-        <!-- main -->
-        <div class="main">
-            <div class="container mt-5">
-                <h1 class="text-center mb-5">All Documents</h1>
-                <div class="row grid-container" id="app"> <!-- Added 'id="app"' -->
-                    <!-- Vue.js will populate this section -->
+        </div>
+
+    </nav>
+
+        <div class="container-fluid">
+            <!-- main -->
+            <div class="main">
+                <div class="container mt-5">
+                    <h1 class="text-center mb-5">All Documents</h1>
+                    <div class="row grid-container" id="app">
+                        <!-- Vue.js will populate this section -->
+                        <document-item></document-item>
+                    </div>
                 </div>
             </div>
             <!-- Latest Post -->
@@ -45,32 +52,17 @@
 
     <!-- bottom navbar -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-bottom bg-danger">
-        <div class="container-fluid">
-            <div class="collapse navbar-collapse" id="bottom-navbar">
-                <ul class="nav justify-content-end align-items-end ms-auto">
-                    <li class="nav-item">
-                        <div class="dropup">
-                            <button type="button" class="btn btn-danger btn-lg dropdown-toggle"
-                                data-bs-toggle="dropdown">
-                                Languange
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">English</a></li>
-                                <li><a class="dropdown-item" href="#">Vietnam</a></li>
-                                <li><a class="dropdown-item" href="#">Chinese</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
+        <!-- ... Your bottom navbar ... -->
     </nav>
 
     <!-- Import Vue.js -->
     <script src="https://unpkg.com/vue@3.0.11/dist/vue.global.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/vue-router@4.0.10"></script>
+
     <!-- Import Axios -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
     <!-- Your allDoc.js script comes after this -->
     <script src="allDoc.js" type="module"></script>
 
