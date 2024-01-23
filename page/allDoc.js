@@ -22,18 +22,6 @@ const DocumentItem = {
             handlePageChange, // Expose the method to the template
         };
     },
-<<<<<<< HEAD
-    mounted() {
-        axios.get('test_allDoc.php') // Adjust the path here
-            .then(response => (this.data = response.data))
-            .catch(error => console.error(error));
-    },
-});
-
-app.component('document-item', {
-    props: ['documentname', 'documentpics'],
-=======
->>>>>>> 686544d5961ce5b71ea3e4fe0a98f6f1820c3e4b
     template: `
         <div class="grid-container">
             <div v-for="document in documents" :key="document.documentid" class="grid-item">
