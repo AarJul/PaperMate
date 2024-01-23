@@ -1,34 +1,50 @@
-const DocumentItem = {
+const stepsItem = {
     setup() {
-        const documents = Vue.ref([]);
+        const docSteps = Vue.ref([]);
+
+        // Fetch documentid from localStorage
+        const documentid = localStorage.getItem("documentid");
+        const params = new URLSearchParams();
+        params.append('documentid', documentid);
+
 
         Vue.onMounted(async () => {
             try {
-                const response = await axios.get('http://localhost:80/PaperMate-1/page/php/getAllDoc_json.php');
-                documents.value = response.data.documents;
-                console.log(documents.value);
+                // Send a POST request to the PHP script with documentid
+                // const response = await axios.post('http://localhost:80/PaperMate-1/page/php/getAllSteps_json.php', {
+                //     documentid: 1,
+                // });
+                const response = await axios.post('http://localhost:80/PaperMate-1/page/php/getAllSteps_json.php', params);
+                console.log("Sending request with documentid:", documentid);
+                console.log("Response:", response);
+
+                // Use response.data.steps instead of response.data.docSteps
+                docSteps.value = response.data.steps;
+                console.log(docSteps.value);
             } catch (error) {
                 console.error(error);
             }
         });
 
-        const handlePageChange = (id) => {
-            localStorage.setItem("documentid", id)
-            window.location.href = "/page/steps.html"
+        const handlePageChange = (id, stepName) => {
+            localStorage.setItem("stepsid", id);
+            localStorage.setItem("stepName", stepName);
+            window.location.href = "/page/stepDetail.html";
         };
 
         return {
-            documents,
-            handlePageChange, // Expose the method to the template
+            docSteps,
+            handlePageChange,
+            documentid, // Expose documentid to the template
         };
     },
     template: `
         <div class="grid-container">
-            <div v-for="document in documents" :key="document.documentid" class="grid-item">
-                <h3>{{ document.documentname }}</h3>
-                <img v-if="document.documentpics !== null" :src="document.documentpics" :alt="document.documentname" class="img-fluid mb-3">
-                <p class="mt-auto mb-auto ms-3">{{ document.documentname }}</p>
-                <button @click="handlePageChange(document.documentid)">isi button sek</button>
+            <div v-for="steps in docSteps" :key="steps.stepsid" class="grid-item">
+                <h3>{{ steps.stepsname }}</h3>
+                <img v-if="steps.stepspic !== null" :src="steps.stepspic" :alt="steps.stepsname" class="img-fluid mb-3">
+                <p class="mt-auto mb-auto ms-3">{{ steps.stepsname }}</p>
+                <button @click="handlePageChange(steps.stepsid, steps.stepsname)">Details and Posts</button>
             </div>
         </div>
     `,
@@ -40,6 +56,5 @@ const app = Vue.createApp({
     },
 });
 
-// Register the component globally or within another component
-app.component('document-item', DocumentItem);
+app.component('steps-item', stepsItem);
 app.mount('#app');

@@ -53,7 +53,7 @@ $todo = get_todo_list($db, $userid);
     <!-- <div id="app">
             <ul class="navbar navbar-expand-sm bg-dark navbar-dark">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#">PaperMate</a>
+                    <a class="navbar-brand" href="allDoc.html">PaperMate</a>
                 </div>
             </ul>
         </div>
@@ -181,7 +181,7 @@ cb=googleTranslateElementInit">
                         <div class="dropup">
                             <button type="button" class="btn btn-danger btn-lg dropdown-toggle"
                                 data-bs-toggle="dropdown">
-                                Languange
+                                Language
                             </button>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">English</a></li>

@@ -28,7 +28,7 @@ const DocumentItem = {
                 <h3>{{ document.documentname }}</h3>
                 <img v-if="document.documentpics !== null" :src="document.documentpics" :alt="document.documentname" class="img-fluid mb-3">
                 <p class="mt-auto mb-auto ms-3">{{ document.documentname }}</p>
-                <button @click="handlePageChange(document.documentid)">isi button sek</button>
+                <button @click="handlePageChange(document.documentid)">Check it out</button>
             </div>
         </div>
     `,
