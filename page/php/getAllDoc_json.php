@@ -1,27 +1,4 @@
 <?php
-<<<<<<< HEAD
-include 'db_connect.php';
-session_start();
-$_SESSION['user_id'] = 1;
-$_SESSION['document_id'] = null;
-$_SESSION['step_id'] = null;
-
-// Allow requests only from http://127.0.0.1:5500
-header('Access-Control-Allow-Origin: http://127.0.0.1:5500');
-
-// Allow the following HTTP methods
-header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
-
-// Allow the following headers in the request
-header('Access-Control-Allow-Headers: Origin, Content-Type, Accept, Authorization');
-
-$db = connect_db();
-$documents = get_documents_list($db);
-
-// Convert the result to JSON and output it
-header('Content-Type: application/json');
-echo get_documents_list_json($db);
-=======
     include 'db_connect.php';
     session_start();
     $_SESSION['user_id'] = 1;
@@ -43,5 +20,4 @@ echo get_documents_list_json($db);
     // Convert the result to JSON and output it
     header('Content-Type: application/json');
     echo get_documents_list_json($db);
->>>>>>> 686544d5961ce5b71ea3e4fe0a98f6f1820c3e4b
 ?>
