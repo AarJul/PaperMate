@@ -150,7 +150,6 @@ cb=googleTranslateElementInit">
                               <tr>
                                 <td><a href="../quan/StepsList.php?id=<?php echo $row['documentid']; ?>"><?php echo $row['documentname']; ?></a></td>
                                 <td><img src="<?php echo $row['documentpics']; ?>"></td>
-                                <td>john@example.com</td>
                               </tr>
                               
                             </tbody><?php endwhile; ?>
