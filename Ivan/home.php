@@ -31,7 +31,7 @@ $todo = get_todo_list($db, $userid);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Account</title>
+    <title>Home Page</title>
 
     <link rel="stylesheet" href="style/home.css">
 
@@ -39,20 +39,27 @@ $todo = get_todo_list($db, $userid);
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
 
 </head>
 
 <body>
     <div id="app">
+    <div id="google_translate_element" style="display: none;"></div>
+
+    </div>
+    <!-- <div id="app">
             <ul class="navbar navbar-expand-sm bg-dark navbar-dark">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="#">PaperMate</a>
                 </div>
             </ul>
         </div>
-        <div id="google_translate_element"></div>
+        <div id="google_translate_element"></div> -->
  
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement(
                 {pageLanguage: 'en'},
@@ -65,7 +72,7 @@ $todo = get_todo_list($db, $userid);
             src=
 "https://translate.google.com/translate_a/element.js?
 cb=googleTranslateElementInit">
-    </script>
+    </script> -->
  
         <div class="container-fluid">
             <!-- main -->
@@ -178,8 +185,9 @@ cb=googleTranslateElementInit">
                             </button>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">English</a></li>
-                                <li><a class="dropdown-item" href="#">Vietnam</a></li>
-                                <li><a class="dropdown-item" href="#">Chinese</a></li>
+                                <li><a class="dropdown-item" href="#">Tiếng Việt</a></li>
+                                <li><a class="dropdown-item" href="#">Indonesia</a></li>
+                                <li><a class="dropdown-item" href="#">日本語</a></li>
                             </ul>
                         </div>
                     </li>
@@ -190,7 +198,7 @@ cb=googleTranslateElementInit">
 
     </div>
     
-
+    <script src="../Min/lang_home.js"></script>
 </body>
 
 </html>
