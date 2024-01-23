@@ -1,9 +1,7 @@
 <?php
-include 'db_connect.php';
 session_start();
-$_SESSION['user_id'] = 1;
-$_SESSION['document_id'] = null;
-$_SESSION['step_id'] = null;
+include 'db_connect.php';
+$db = connect_db();
 
 // Allow requests only from http://127.0.0.1:5500
 header('Access-Control-Allow-Origin: http://127.0.0.1:5500');
@@ -14,10 +12,14 @@ header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
 // Allow the following headers in the request
 header('Access-Control-Allow-Headers: Origin, Content-Type, Accept, Authorization');
 
-$db = connect_db();
-$documents = get_documents_list($db);
+$step_id = $_SESSION['step_id'] === null ? $_GET['id'] : $_SESSION['step_id'];
+$_SESSION['step_id'] = $step_id;
 
-// Convert the result to JSON and output it
-header('Content-Type: application/json');
-echo get_documents_list_json($db);
+if ($step_id === null) {
+    // Handle the case when documentid is not provided
+    echo json_encode(['error' => 'Document ID is missing']);
+} else {
+    echo get_step_posts_json($step_id, $db);
+}
+
 ?>

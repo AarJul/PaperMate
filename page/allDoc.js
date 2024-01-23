@@ -8,7 +8,7 @@ const app = Vue.createApp({
         };
     },
     mounted() {
-        axios.get('php/getAllDoc_json.php') // Adjust the path here
+        axios.get('test_allDoc.php') // Adjust the path here
             .then(response => (this.data = response.data))
             .catch(error => console.error(error));
     },
